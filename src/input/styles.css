@@ -1,0 +1,28 @@
+input {
+  box-sizing: border-box;
+  color: var(--theme-text-primary);
+  position: relative;
+  border: 1px solid var(--colors-grey-300);
+  background-color: var(--colors-grey-100);
+  border-radius: calc(var(--unit) * 2);
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  outline: none;
+  transition:
+    background-color var(--transition-duration) var(--transition-curve),
+    border-color var(--transition-duration) var(--transition-curve);
+}
+
+input:hover {
+  background-color: var(--colors-grey-100);
+}
+
+input:focus {
+  background-color: var(--colors-white);
+  border-color: var(--theme-primary);
+}
+
+input.error {
+  border-color: var(--colors-red);
+}
