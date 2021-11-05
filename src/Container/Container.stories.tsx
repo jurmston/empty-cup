@@ -1,27 +1,25 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Input } from './Input'
+import { Container } from './Container'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Input',
-  component: Input,
+  title: 'Components/Container',
+  component: Container,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Input>
+} as ComponentMeta<typeof Container>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Input> = (args) => (
-  <div style={{ maxWidth: 300 }}>
-    <Input {...args} />
-  </div>
+const Template: ComponentStory<typeof Container> = (args) => (
+  <Container {...args}>
+    <div style={{ width: '100%', height: 500, backgroundColor: 'red' }} />
+  </Container>
 )
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  endAdornment: '/ hr'
 }

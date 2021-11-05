@@ -1,7 +1,8 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button } from './button'
+import { Icon } from '../Icon'
+import { Button } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,24 +20,27 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  color: 'default',
-  variant: 'text',
   children: 'Button',
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  color: 'primary',
-  children: 'Edit Button',
-  startIcon: 'edit',
+export const WithStartIcon = Template.bind({})
+WithStartIcon.args = {
+  startIcon: <Icon>edit</Icon>,
+  children: 'Button',
 }
 
-export const Ternary = () => (
+export const WithEndIcon = Template.bind({})
+WithEndIcon.args = {
+  endIcon: <Icon>close</Icon>,
+  children: 'Button',
+}
+
+export const Layout = () => (
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <Button variant="contained">Contained</Button>
-    <Button variant="contained" startIcon="face">Contained Icon</Button>
+    <Button variant="contained" startIcon={<Icon>edit</Icon>}>Contained Icon</Button>
     <Button>Text</Button>
-    <Button startIcon="phone">Text Icon</Button>
+    <Button startIcon={<Icon>edit</Icon>}>Text Icon</Button>
   </div>
 )
 

@@ -7,8 +7,9 @@ interface ButtonProps {
   children?: React.ReactNode
   color?: 'default' | 'primary' | 'secondary'
   variant?: 'text' | 'contained'
-  startIcon?: string
-  endIcon?: string
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
+  disabled?: boolean
 }
 
 
@@ -16,19 +17,19 @@ export function Button({
   children,
   color = 'default',
   variant = 'text',
-  startIcon: startIconFromProps = '',
-  endIcon: endIconFromProps = '',
-  ...props
+  startIcon: startIconFromProps,
+  endIcon: endIconFromProps,
+  disabled = false,
 }: ButtonProps) {
 
   const startIcon = startIconFromProps && (
-    <span className={clsx('material-icons-round', 'icon', 'start-icon')}>
+    <span className={clsx('icon', 'start-icon')}>
       {startIconFromProps}
     </span>
   )
 
   const endIcon = endIconFromProps && (
-    <span className={clsx('material-icons-round', 'icon', 'end-icon')}>
+    <span className={clsx('icon', 'end-icon')}>
       {endIconFromProps}
     </span>
   )
@@ -40,7 +41,7 @@ export function Button({
         secondary: color === 'secondary',
         contained: variant === 'contained',
       })}
-      {...props}
+      disabled={disabled}
     >
       {startIcon}
       {children}

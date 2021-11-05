@@ -19,6 +19,8 @@ button {
   color: var(--colors-grey-700);
   background-color: transparent;
 
+  font-size: 14px;
+
   /* Simple UI */
   border-radius: calc(var(--unit) * 2);
   min-width: calc(var(--unit) * 8);
@@ -83,19 +85,28 @@ button.contained.secondary:active {
   background-color: var(--theme-secondary-light);
 }
 
+button:disabled {
+  cursor: default;
+  color: var(--theme-text-disabled);
+  background-color: transparent;
+}
+
+button.contained:disabled {
+  box-shadow: none;
+  background-color: var(--colors-grey-200);
+  border-color: var(--colors-grey-300);
+}
+
 span.icon {
   display: inherit;
-  font-size: 18px;
-  margin-top: -2px;
-  margin-bottom: -2px;
 }
 
 span.start-icon {
-  margin-right: var(--unit);
-  margin-left: calc(var(--unit) * -1);
+  margin-right: calc(var(--unit) * 0.5);
+  margin-left: calc(var(--unit) * -0.5);
 }
 
 span.end-icon {
-  margin-left: var(--unit);
-  margin-right: calc(var(--unit) * -1);
+  margin-left: calc(var(--unit) * 0.5);
+  margin-right: calc(var(--unit) * -0.5);
 }

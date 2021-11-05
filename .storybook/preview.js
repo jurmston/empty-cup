@@ -1,3 +1,5 @@
+import React from 'react'
+import { ScreenProvider } from '../src/ScreenProvider'
 import '../src/empty-cup.css'
 
 export const parameters = {
@@ -9,3 +11,14 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  // MUI Theme Provider
+  (Story, context) => {
+    return (
+      <ScreenProvider>
+        <Story {...context} />
+      </ScreenProvider>
+    )
+  },
+]
