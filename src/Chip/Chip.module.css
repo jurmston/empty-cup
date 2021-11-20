@@ -9,9 +9,17 @@
   display: inline-flex;
   font-size: var(--typography-caption-font-size);
   font-weight: var(--font-weight-bold);
-  height: 24px;
+  height: 20px;
   letter-spacing: var(--typography-caption-letter-spacing);
   line-height: var(--typography-caption-line-height);
-  padding: calc(var(--unit) / 4) var(--unit);
+  padding: calc(var(--unit) / 2) calc(var(--unit) / 2);
   white-space: nowrap;
+}
+
+.start-icon {
+  padding-left: calc(var(--unit) / 4);
+}
+
+.end-icon {
+  padding-right: calc(var(--unit) / 4);
 }

@@ -1,0 +1,114 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: var(--unit);
+}
+
+.inputWrapper.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--unit) / 2);
+}
+
+.input {
+  border: 1px solid rgb(var(--colors-grey-300));
+  background-color: rgb(var(--colors-white));
+  border-radius: calc(var(--unit) / 2);
+  color: rgb(var(--theme-text-primary));
+  font-size: var(--typography-base-font-size);
+  display: inline-flex;
+  align-items: stretch;
+  position: relative;
+  transition:
+    background-color var(--transition-duration) var(--transition-curve),
+    box-shadow var(--transition-duration) var(--transition-curve),
+    border-color var(--transition-duration) var(--transition-curve);
+}
+
+.inputInner {
+  padding: 4px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.input.pill {
+  padding: 6px 12px;
+  border-radius: calc(var(--unit) * 2);
+}
+
+.input.filled {
+  background-color: rgb(var(--colors-grey-100));
+}
+
+.input.fullWidth {
+  width: 100%;
+}
+
+.input.error {
+  border-color: rgb(var(--colors-red));
+}
+
+.adornment {
+  color: var(--theme-text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.startAdornment {
+  margin-right: calc(var(--unit) * 0.5);
+}
+
+.endAdornment {
+  margin-left: calc(var(--unit) * 0.5);
+}
+
+.input.isFocused {
+  background-color: rgb(var(--colors-white));
+  border-color: rgb(var(--theme-primary));
+  box-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgba(var(--theme-primary), 0.36) 0px 0px 0px 4px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(60 66 87 / 16%) 0px 0px 0px 1px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+}
+
+.input.error:focus-within {
+  border-color: rgb(var(--colors-red));
+  box-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgba(var(--colors-red), 0.36) 0px 0px 0px 4px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(60 66 87 / 16%) 0px 0px 0px 1px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+}
+
+.label {
+  color: rgb(var(--theme-text-secondary));
+  font-size: var(--typography-h6-font-size);
+  font-weight: var(--typography-h6-font-weight);
+  line-height: var(--typography-h6-line-height);
+  letter-spacing: var(--typography-h6-letter-spacing);
+  transition:
+    color var(--transition-duration) var(--transition-curve),
+}
+
+.inputWrapper:focus-within > .label {
+  color: rgb(var(--theme-primary-dark));
+}
+
+.inputWrapper:focus-within > .label.error {
+  color: rgb(var(--colors-red-500));
+}
+
+.label.error {
+  color: rgb(var(--colors-red-500));
+}

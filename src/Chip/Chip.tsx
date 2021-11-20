@@ -1,6 +1,6 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import './styles.css'
+import styles from 'Chip.module.css'
 
 
 interface ChipProps {

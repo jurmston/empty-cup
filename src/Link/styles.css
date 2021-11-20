@@ -1,0 +1,29 @@
+a.link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--theme-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color var(--transition-duration) var(--transition-curve),
+    transform var(--transition-duration) var(--transition-curve);
+}
+
+a.link:hover,
+a.link:focus {
+  color: var(--theme-primary-dark);
+  transform: translateY(-1px);
+}
+
+a.link:active {
+  color: var(--theme-primary-light);
+  transform: translateY(0);
+}
+
+span.start-icon {
+  margin-right: calc(var(--unit) * 0.5);
+}
+
+span.end-icon {
+  margin-left: calc(var(--unit) * 0.5);
+}

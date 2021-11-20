@@ -11,6 +11,7 @@
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "clsx": "^1.1.1",
+    "downshift": "^6.1.7",
     "nanoid": "^3.1.30",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "src:download": "cd ./scripts && babel-node --config-file ./babel.config.js ./download-icons.js"
   },
   "eslintConfig": {
     "extends": [
@@ -55,11 +57,22 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/runtime": "^7.12.1",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/node-logger": "^6.3.12",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.12"
+    "@storybook/react": "^6.3.12",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-optimize-clsx": "^2.6.2",
+    "cross-fetch": "^3.1.4",
+    "fs-extra": "^9.1.0",
+    "mustache": "^4.2.0",
+    "shx": "^0.3.3",
+    "svgo": "^1.3.2",
+    "yargs": "^15.4.1"
   }
 }

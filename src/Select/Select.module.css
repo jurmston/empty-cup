@@ -1,0 +1,125 @@
+div.select-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: var(--unit);
+}
+
+div.select-wrapper.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--unit) / 2);
+}
+
+select {
+  box-sizing: border-box;
+  color: inherit;
+  position: relative;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  flex: 1;
+}
+
+.select {
+  border: 1px solid rgb(var(--colors-grey-300));
+  background-color: rgb(var(--colors-white));
+  border-radius: calc(var(--unit) / 2);
+  color: rgb(var(--theme-text-primary));
+  display: inline-flex;
+  padding: 4px;
+  align-items: center;
+  position: relative;
+  transition:
+    background-color var(--transition-duration) var(--transition-curve),
+    box-shadow var(--transition-duration) var(--transition-curve),
+    border-color var(--transition-duration) var(--transition-curve);
+  box-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(60 66 87 / 16%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+}
+
+.select.variant-pill {
+  padding: 6px 12px;
+  border-radius: calc(var(--unit) * 2);
+}
+
+.select.filled {
+  background-color: rgb(var(--colors-grey-100));
+}
+
+.select.full-width {
+  width: 100%;
+}
+
+.select:hover {
+  background-color: rgb(var(--colors-grey-100));
+}
+
+.select.error {
+  border-color: rgb(var(--colors-red));
+}
+
+.select .adornment {
+  color: var(--theme-text-secondary);
+}
+
+.select .start-adornment {
+  margin-right: var(--unit);
+}
+
+.select .end-adornment {
+  margin-left: var(--unit);
+}
+
+.select:focus-within {
+  background-color: rgb(var(--colors-white));
+  border-color: rgb(var(--theme-primary));
+  box-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgba(var(--theme-primary), 0.36) 0px 0px 0px 4px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(60 66 87 / 16%) 0px 0px 0px 1px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+}
+
+.select.error:focus-within {
+  border-color: rgb(var(--colors-red));
+  box-shadow:
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgba(var(--colors-red), 0.36) 0px 0px 0px 4px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(60 66 87 / 16%) 0px 0px 0px 1px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+}
+
+label.label {
+  color: rgb(var(--theme-text-secondary));
+  font-size: var(--typography-h6-font-size);
+  font-weight: var(--typography-h6-font-weight);
+  line-height: var(--typography-h6-line-height);
+  letter-spacing: var(--typography-h6-letter-spacing);
+  transition:
+    color var(--transition-duration) var(--transition-curve),
+}
+
+.select-wrapper:focus-within > label.label {
+  color: rgb(var(--theme-primary-dark));
+}
+
+.select-wrapper:focus-within > label.label.error {
+  color: rgb(var(--colors-red-500));
+}
+
+label.label.error {
+  color: rgb(var(--colors-red-500));
+}

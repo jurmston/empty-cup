@@ -2,29 +2,32 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Icon } from '../Icon'
-import { AddOn } from '../AddOn'
-import { Input } from './Input'
+import { Link } from './Link'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Input',
-  component: Input,
+  title: 'Components/Link',
+  component: Link,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Input>
+} as ComponentMeta<typeof Link>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Input> = (args) => (
-  <div style={{ maxWidth: 500 }}>
-    <Input {...args} />
-  </div>
-)
+const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  startAdornment: <Icon>help</Icon>,
-  endAddOn: <AddOn component="button" onClick={() => alert('hi')}>Click</AddOn>,
+  children: 'Link',
+}
+
+export const WithStartIcon = Template.bind({})
+WithStartIcon.args = {
+  startIcon: <Icon>edit</Icon>,
+  children: 'Link',
+}
+
+export const WithEndIcon = Template.bind({})
+WithEndIcon.args = {
+  endIcon: <Icon>close</Icon>,
+  children: 'Link',
 }

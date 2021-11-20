@@ -1,12 +1,12 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import './styles.css'
+import styles from './Button.module.css'
 
 
 interface ButtonProps {
   children?: React.ReactNode
-  color?: 'default' | 'primary' | 'secondary'
-  variant?: 'text' | 'contained'
+  color?: 'default' | 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error'
+  variant?: 'text' | 'contained' | 'outlined' | 'link'
   startIcon?: React.ReactNode
   endIcon?: React.ReactNode
   disabled?: boolean
@@ -23,24 +23,20 @@ export function Button({
 }: ButtonProps) {
 
   const startIcon = startIconFromProps && (
-    <span className={clsx('icon', 'start-icon')}>
+    <span className={clsx(styles.icon, styles.startIcon)}>
       {startIconFromProps}
     </span>
   )
 
   const endIcon = endIconFromProps && (
-    <span className={clsx('icon', 'end-icon')}>
+    <span className={clsx(styles.icon, styles.endIcon)}>
       {endIconFromProps}
     </span>
   )
 
   return (
     <button
-      className={clsx({
-        primary: color === 'primary',
-        secondary: color === 'secondary',
-        contained: variant === 'contained',
-      })}
+      className={clsx(styles.button, styles[color], styles[variant])}
       disabled={disabled}
     >
       {startIcon}

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import './styles.css'
+import styles from './Icon.module.css'
 
 interface IconProps {
   className?: string
@@ -10,7 +10,7 @@ interface IconProps {
 export function Icon({ className, children }: IconProps) {
 
   return (
-    <span className={clsx('material-icons-round', 'icon', className)}>
+    <span className={clsx('material-icons-round', styles.icon, className)}>
       {children}
     </span>
   )
