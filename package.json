@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "src:download": "cd ./scripts && babel-node --config-file ./babel.config.js ./download-icons.js"
+    "src:download": "cd ./scripts && babel-node --config-file ./babel.config.js ./download-icons.js",
+    "src:icons": "cd ./scripts && cross-env UV_THREADPOOL_SIZE=64 babel-node --config-file ./babel.config.js ./icon-builder.js --output-dir ../src/icons --svg-dir ../material-icons --renameFilter ./rename-filters.js"
   },
   "eslintConfig": {
     "extends": [
