@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Icon } from '../Icon'
+import HelpIcon from '../icons/HelpRounded'
 import { AddOn } from '../AddOn'
 import { Input } from './Input'
 
@@ -25,6 +25,6 @@ const Template: ComponentStory<typeof Input> = (args) => (
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  startAdornment: <Icon>help</Icon>,
+  startAdornment: <HelpIcon />,
   endAddOn: <AddOn component="button" onClick={() => alert('hi')}>Click</AddOn>,
 }

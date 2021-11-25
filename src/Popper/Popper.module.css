@@ -1,0 +1,18 @@
+.popper {
+  animation-name: grow;
+  animation-duration: 100ms;
+  animation-timing-function: var(--transition-curve);
+}
+
+.tooltip {
+  /* Prevents scroll issue, waiting for Popper.js to add this style once initiated. */
+  position: 'fixed';
+  /* Fix Popper.js display issue */
+  top: 0;
+  left: 0;
+}
+
+@keyframes grow {
+  0% { opacity: 0; transform: scale(0.75, 0.5625) }
+  100% { opacity: 1; transform: scale(1, 1) }
+}

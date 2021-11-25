@@ -1,8 +1,0 @@
-@import './colors.css';
-@import './base.css';
-@import './vars.css';
-
-:root {
-  --color-primary: var(--colors-blue-500);
-  --color-secondary: var(--colors-amber-500);
-}

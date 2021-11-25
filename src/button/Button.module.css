@@ -3,23 +3,18 @@
   color: rgb(var(--colors-grey-700));
   background-color: transparent;
 
-  font-size: 14px;
+  font-size: 16px;
   font-weight: var(--font-weight-medium);
 
-
-
-  /* Simple UI */
+  box-sizing: border-box;
   border-radius: calc(var(--unit) * 0.5);
   min-width: calc(var(--unit) * 8);
-  padding: 4px 8px;
+  padding: 7px 8px;
+
   transition:
     background-color var(--transition-duration-short) var(--transition-curve),
     color var(--transition-duration-short) var(--transition-curve),
     box-shadow var(--transition-duration-short) var(--transition-curve);
-}
-
-.button:focus {
-  box-shadow: var(--highlight-primary);
 }
 
 /* variant = 'text' */
@@ -98,15 +93,14 @@
 .button.link {
   background-color: transparent;
   border: none;
-  padding: 2px 4px;
+  margin-top: -3px;
+  padding: 1px 2px;
+  min-width: 0;
 }
 
 .button.link:hover {
   background-color: transparent;
   color: var(--colors-grey-900);
-}
-
-.button.link:hover > * {
   text-decoration: underline;
 }
 
@@ -145,8 +139,6 @@
   display: inherit;
 }
 
-
-
 .startIcon {
   margin-right: calc(var(--unit) * 0.5);
   margin-left: calc(var(--unit) * -0.5);
@@ -155,4 +147,8 @@
 .endIcon {
   margin-left: calc(var(--unit) * 0.5);
   margin-right: calc(var(--unit) * -0.5);
+}
+
+.button:focus, .button:focus:hover {
+  box-shadow: var(--highlight-primary);
 }

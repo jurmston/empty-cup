@@ -22,3 +22,13 @@ export type Color =
   | 'brown'
   | 'blue-grey'
   | 'grey'
+
+
+  export type ThemeColor =
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'info'
+    | 'warning'
+    | 'error'

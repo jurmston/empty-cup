@@ -19,7 +19,9 @@ const Template: ComponentStory<typeof Checkbox> = ({ checked: checkedFromProps, 
   console.log(checked)
 
   return (
-    <Checkbox {...args} checked={checked} onChange={event => setChecked(event.target.checked)} />
+    <div style={{ maxWidth: 200, display: 'flex', flexDirection: 'column', gap: 4 }}>
+      <Checkbox {...args} checked={checked} onChange={event => setChecked(event.target.checked)} />
+    </div>
   )
 }
 

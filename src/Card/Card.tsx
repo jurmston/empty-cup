@@ -1,6 +1,6 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import './styles.css'
+import styles from './Card.module.css'
 
 interface CardProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode
@@ -12,9 +12,9 @@ export function Card({ children, variant = 'raised', ...rest }: CardProps) {
   return (
     <div
       {...rest}
-      className={clsx('card', {
-        raised: variant === 'raised',
-        outlined: variant === 'outlined',
+      className={clsx(styles.card, {
+        [styles.raised]: variant === 'raised',
+        [styles.outlined]: variant === 'outlined',
       })}
     >
       {children}

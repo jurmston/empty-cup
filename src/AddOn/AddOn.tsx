@@ -22,16 +22,18 @@ type AddOnProps<
 
 
 export function AddOn({
-  component: AddOnComponent = 'div',
   position = 'right',
   ...rest
 }: AddOnProps) {
+
+  const isClickable = Boolean(rest.onClick)
+  const AddOnComponent = isClickable ? 'button' : 'div'
 
   return (
     <AddOnComponent
       {...rest}
       className={clsx(styles.addOn, {
-        [styles.clickable]: Boolean(rest.onClick),
+        [styles.isClickable]: isClickable,
         [styles.left]: position === 'left',
         [styles.right]: position === 'right',
       })}

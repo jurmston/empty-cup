@@ -1,7 +1,8 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Icon } from '../Icon'
+import EditIcon from '../icons/EditRounded'
+import CloseIcon from '../icons/CloseRounded'
 import { Button } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -25,22 +26,22 @@ Primary.args = {
 
 export const WithStartIcon = Template.bind({})
 WithStartIcon.args = {
-  startIcon: <Icon>edit</Icon>,
+  startIcon: <EditIcon />,
   children: 'Button',
 }
 
 export const WithEndIcon = Template.bind({})
 WithEndIcon.args = {
-  endIcon: <Icon>close</Icon>,
+  endIcon: <CloseIcon />,
   children: 'Button',
 }
 
 export const Layout = () => (
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <Button variant="contained">Contained</Button>
-    <Button variant="contained" startIcon={<Icon>edit</Icon>}>Contained Icon</Button>
+    <Button variant="contained" startIcon={<EditIcon />}>Contained Icon</Button>
     <Button>Text</Button>
-    <Button startIcon={<Icon>edit</Icon>}>Text Icon</Button>
+    <Button startIcon={<EditIcon />}>Text Icon</Button>
   </div>
 )
 

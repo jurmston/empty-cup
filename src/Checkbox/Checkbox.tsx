@@ -1,32 +1,27 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import { nanoid } from 'nanoid'
-import { Color } from '../types'
-import './styles.css'
+import { ThemeColor } from '../types'
+import styles from './Checkbox.module.css'
 
-interface CheckboxProps extends React.HTMLProps<HTMLInputElement>{
-  color?: Color | 'primary' | 'secondary'
+
+interface CheckboxProps extends React.HTMLProps<HTMLInputElement> {
+  color?: ThemeColor
   label?: string
 }
 
-export function Checkbox({ label, color, checked, onChange, ...rest }: CheckboxProps) {
-  const [id, ] = React.useState(() => nanoid())
 
+export function Checkbox({ id, label, color = 'default', ...rest }: CheckboxProps) {
   return (
-    <span className="checkbox">
+    <span className={styles.checkbox}>
       <input
         id={id}
         type="checkbox"
-        className="checkbox"
-        checked={checked}
-        onChange={onChange}
+        className={clsx(styles.input)}
         {...rest}
       />
 
       <span
-        className={clsx('checkbox-icon', {
-          checked,
-        })}
+        className={clsx(styles.checkboxIcon, styles[color])}
       />
 
       <label htmlFor={id}>

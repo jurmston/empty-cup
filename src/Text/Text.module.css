@@ -1,0 +1,23 @@
+.textSecondary { color: var(--theme-text-secondary) }
+.textDisabled { color: var(--theme-text-disabled) }
+.primary { color: rgb(var(--theme-primary)) }
+.secondary { color: rgb(var(--theme-secondary)) }
+.success { color: rgb(var(--theme-success)) }
+.info { color: rgb(var(--theme-info)) }
+.warning { color: rgb(var(--theme-warning)) }
+.error { color: rgb(var(--theme-error)) }
+
+.caption {
+  font-size: var(--typography-caption-font-size);
+  font-weight: var(--typography-caption-font-weight);
+  line-height: var(--typography-caption-line-height);
+  letter-spacing: var(--typography-caption-letter-spacing);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -1,13 +1,12 @@
 .card {
-  background-color: var(--theme-background-paper);
-  padding: calc(var(--unit) * 2);
+  background-color: rgb(var(--theme-background-paper));
   border-radius: var(--unit);
 }
 
-.card.raised {
+.raised {
   box-shadow: var(--shadows-card);
 }
 
-.card.outlined {
+.outlined {
   border: 1px solid var(--theme-divider);
 }

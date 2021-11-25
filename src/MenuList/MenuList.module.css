@@ -1,0 +1,12 @@
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: calc(var(--unit) * 0.5);
+  position: relative;
+}
+
+.container {
+  border-radius: var(--unit);
+  background-color: rgb(var(--colors-white));
+  box-shadow: var(--shadows-card);
+}

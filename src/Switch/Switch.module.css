@@ -1,0 +1,92 @@
+
+
+.switch {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  --track-height: calc(var(--unit) * 2.5);
+  --track-width: calc(var(--unit) * 4);
+  --knob-size: calc(var(--track-height) - 4px);
+  --knob-margin: 1px;
+}
+
+.input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.track {
+  position: relative;
+  margin-right: calc(var(--unit));
+  border-radius: var(--track-height);
+  width: var(--track-width);
+  height: var(--track-height);
+  max-width: var(--track-width);
+  max-height: var(--track-height);
+  box-shadow: var(--shadows-button);
+  background-color: #f5f8fa;
+  box-sizing: border-box;
+  background-image: linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0));
+  border: 1px solid rgb(var(--colors-grey-300));
+  transition:
+    background-color var(--transition-duration-short) var(--transition-curve),
+    box-shadow var(--transition-duration-short) var(--transition-curve),
+    border-color var(--transition-duration-short) var(--transition-curve);
+}
+
+.track:hover {
+  box-shadow: var(--shadows-button-hovered);
+}
+
+.switch:focus-within > .track {
+  box-shadow: var(--highlight-primary);
+}
+
+.knob {
+  position: absolute;
+  top: var(--knob-margin);
+  left: var(--knob-margin);
+  background-color: rgb(var(--colors-white));
+  border-radius: var(--knob-size);
+  width: var(--knob-size);
+  height: var(--knob-size);
+  max-width: var(--knob-size);
+  max-height: var(--knob-size);
+  border: 1px solid rgb(var(--colors-grey-300));
+  box-shadow: var(--shadows-button);
+  transition:
+    left var(--transition-duration-short) var(--transition-curve),
+    border-color var(--transition-duration-short) var(--transition-curve);
+}
+
+.input:checked ~ .track {
+  background-color: rgb(var(--colors-grey-500));
+  background-image: linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0));
+}
+
+.input:checked ~ .track .knob {
+  left: calc(var(--track-width) - var(--knob-size) - var(--knob-margin) * 2 - 1px);
+}
+
+.input:checked ~ .track.primary { background-color: rgb(var(--theme-primary)); border-color: rgb(var(--theme-primary-dark)) }
+.input:checked ~ .track.secondary { background-color: rgb(var(--theme-secondary)); border-color: rgb(var(--theme-secondary-dark)) }
+.input:checked ~ .track.success { background-color: rgb(var(--theme-success)); border-color: rgb(var(--theme-success-dark)) }
+.input:checked ~ .track.info { background-color: rgb(var(--theme-info)); border-color: rgb(var(--theme-info-dark)) }
+.input:checked ~ .track.warning { background-color: rgb(var(--theme-warning)); border-color: rgb(var(--theme-warning-dark)) }
+.input:checked ~ .track.error { background-color: rgb(var(--theme-error)); border-color: rgb(var(--theme-error-dark)) }
+
+.input:checked ~ .track.primary > .knob { border-color: rgb(var(--theme-primary-dark)) }
+.input:checked ~ .track.secondary > .knob { border-color: rgb(var(--theme-secondary-dark)) }
+.input:checked ~ .track.success > .knob { border-color: rgb(var(--theme-success-dark)) }
+.input:checked ~ .track.info > .knob { border-color: rgb(var(--theme-info-dark)) }
+.input:checked ~ .track.warning > .knob { border-color: rgb(var(--theme-warning-dark)) }
+.input:checked ~ .track.error > .knob { border-color: rgb(var(--theme-error-dark)) }

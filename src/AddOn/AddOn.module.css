@@ -1,5 +1,3 @@
-@import '../empty-cup.css';
-
 .addOn {
   padding-right: var(--unit);
   padding-left: var(--unit);
@@ -22,16 +20,16 @@
   border-bottom-right-radius: 4px;
 }
 
-.clickable {
+.isClickable {
   font-weight: var(--font-weight-medium);
   cursor: pointer;
 }
 
-.clickable:hover {
+.isClickable:hover {
   background-color: rgb(var(--colors-grey-200));
 }
 
-.clickable:focus {
+.isClickable:focus {
   box-shadow:
     rgb(0 0 0 / 0%) 0px 0px 0px 0px,
     rgba(var(--theme-primary), 0.36) 0px 0px 0px 4px,

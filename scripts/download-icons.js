@@ -7,41 +7,40 @@ import Queue from 'modules/waterfall/Queue';
 import sleep from 'modules/waterfall/sleep';
 import retry from 'modules/waterfall/retry';
 
-// Icons we don't publish.
-// This is just a list of new icons.
-// In the future we might change what icons we want to exclude (e.g. by popularity)
-const ignoredIconNames = new Set([
-  'ads_click',
-  'area_chart',
-  'back_hand',
-  'checklist',
-  'checklist_rtl',
-  'compost',
-  'cruelty_free',
-  'data_exploration',
-  'disabled_visible',
-  'draw',
-  'drive_file_move_rtl',
-  'edit_calendar',
-  'edit_note',
-  'emergency',
-  'free_cancellation',
-  'front_hand',
-  'generating_tokens',
-  'group_off',
-  'hotel_class',
-  'incomplete_circle',
-  'new_label',
-  'personal_injury',
-  'pin_end',
-  'pin_invoke',
-  'private_connectivity',
-  'real_estate_agent',
-  'recycling',
-  'space_dashboard',
-  'water_drop',
-  'waving_hand',
-]);
+import iconList from './icons.json'
+
+// In this library we will only include the essential icons. Other icons need
+// to be imported manually.
+const includedIconNames = new Set(iconList)
+// const includedIconNames = new Set([
+//   'add',
+//   'close',
+//   'delete',
+//   'remove',
+//   'cancel',
+//   'task_alt',
+//   'check',
+//   'edit',
+//   'info',
+//   'home',
+//   'settings',
+//   'account_circle',
+//   'search',
+//   'info',
+//   'visibility',
+//   'favorite',
+//   'lock',
+//   'favorite_border',
+//   'verified',
+//   'calendar_today',
+//   'dashboard',
+//   'thumb_up',
+//   'check_circle',
+//   'highlight_off',
+//   'help',
+//   'article',
+
+// ])
 
 const themeMap = {
   baseline: '', // filled
@@ -92,7 +91,7 @@ async function run() {
     const data = JSON.parse(text.replace(")]}'", ''));
     let icons = data.icons;
     icons = icons.filter((icon) => {
-      return !ignoredIconNames.has(icon.name);
+      return includedIconNames.has(icon.name);
     });
     icons = icons.map((icon, index) => ({ index, ...icon }));
     icons = icons.splice(argv.startAfter || 0);

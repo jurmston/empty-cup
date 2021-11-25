@@ -1,0 +1,46 @@
+.menuListItem {
+  position: relative;
+  background-color: transparent;
+  padding: var(--unit);
+  border-radius: calc(var(--unit) / 2);
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  justify-content: flex-start;
+  align-items: stretch;
+  outline: 0;
+  transition:
+    background-color var(--transition-duration) var(--transition-curve),
+    color var(--transition-duration) var(--transition-curve);
+  font-weight: var(--font-weight-medium);
+  color: rgb(var(--theme-primary-dark));
+}
+
+.menuListItem:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.isSelected {
+  background-color: rgb(var(--theme-primary-super-light));
+  color: rgb(var(--theme-primary-super-dark));
+}
+
+.menuListItem:hover:not(.isDisabled) {
+  background-color: rgb(var(--colors-grey-100));
+  color: rgb(var(--theme-text-primary))l
+}
+
+.menuListItem:active:not(.isDisabled) {
+  background-color: rgb(var(--colors-grey-300));
+}
+
+.menuListItem:focus:not(.isDisabled) {
+  box-shadow: var(--highlight-primary);
+}
+
+.isDisabled {
+  color: var(--theme-text-disabled);
+  background-color: transparent;
+  cursor: default;
+}

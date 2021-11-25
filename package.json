@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.10.2",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -10,6 +11,7 @@
     "@types/node": "^12.20.36",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@types/react-transition-group": "^4.4.4",
     "clsx": "^1.1.1",
     "downshift": "^6.1.7",
     "nanoid": "^3.1.30",
@@ -27,7 +29,10 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "src:download": "cd ./scripts && babel-node --config-file ./babel.config.js ./download-icons.js",
-    "src:icons": "cd ./scripts && cross-env UV_THREADPOOL_SIZE=64 babel-node --config-file ./babel.config.js ./icon-builder.js --output-dir ../src/icons --svg-dir ../material-icons --renameFilter ./rename-filters.js"
+    "src:icons": "cd ./scripts && cross-env UV_THREADPOOL_SIZE=64 babel-node --config-file ./babel.config.js ./icon-builder.js --output-dir ../src/icons --svg-dir ../material-icons --renameFilter ./rename-filters.js",
+    "presrc:download": "rm -rf ./material-icons",
+    "presrc:icons": "rm -rf ./src/icons",
+    "get-icons": "npm run src:download && npm run src:icons"
   },
   "eslintConfig": {
     "extends": [
@@ -69,11 +74,12 @@
     "@storybook/react": "^6.3.12",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-optimize-clsx": "^2.6.2",
+    "cross-env": "^7.0.3",
     "cross-fetch": "^3.1.4",
     "fs-extra": "^9.1.0",
     "mustache": "^4.2.0",
     "shx": "^0.3.3",
-    "svgo": "^1.3.2",
+    "svgo": "^2.8.0",
     "yargs": "^15.4.1"
   }
 }
