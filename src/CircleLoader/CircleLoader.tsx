@@ -20,7 +20,7 @@ export function CircleLoader({
   size = 40,
   value = 0,
   variant = 'indeterminate',
-  color = 'purple-500',
+  color = 'primary',
 }: CircleLoaderProps) {
 
   const circleStyle: Partial<React.CSSProperties> = {}
@@ -35,7 +35,7 @@ export function CircleLoader({
     rootStyle.transform = 'rotate(-90deg)';
   }
 
-  circleStyle.stroke = `rgb(var(--colors-${color}))`
+  circleStyle.stroke = `var(--colors-${color})`
 
   return (
     <span

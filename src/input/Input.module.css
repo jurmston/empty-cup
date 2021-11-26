@@ -12,10 +12,10 @@
 }
 
 .input {
-  border: 1px solid rgb(var(--colors-grey-300));
-  background-color: rgb(var(--colors-white));
+  border: 1px solid var(--colors-grey-300);
+  background-color: var(--colors-white);
   border-radius: calc(var(--unit) / 2);
-  color: rgb(var(--theme-text-primary));
+  color: var(--colors-text-primary);
   font-size: var(--typography-base-font-size);
   display: inline-flex;
   align-items: stretch;
@@ -39,7 +39,7 @@
 }
 
 .input.filled {
-  background-color: rgb(var(--colors-grey-100));
+  background-color: var(--colors-grey-100);
 }
 
 .input.fullWidth {
@@ -47,7 +47,7 @@
 }
 
 .input.error {
-  border-color: rgb(var(--colors-red));
+  border-color: var(--colors-red);
 }
 
 .adornment {
@@ -67,32 +67,18 @@
 }
 
 .input.isFocused {
-  background-color: rgb(var(--colors-white));
-  border-color: rgb(var(--theme-primary));
-  box-shadow:
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgba(var(--theme-primary), 0.36) 0px 0px 0px 4px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(60 66 87 / 16%) 0px 0px 0px 1px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+  background-color: var(--colors-white);
+  border-color: var(--theme-primary);
+  box-shadow: var(--highlight-primary);
 }
 
 .input.error:focus-within {
-  border-color: rgb(var(--colors-red));
-  box-shadow:
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgba(var(--colors-red), 0.36) 0px 0px 0px 4px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(60 66 87 / 16%) 0px 0px 0px 1px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+  border-color: var(--colors-red);
+  box-shadow: var(--highlight-error);
 }
 
 .label {
-  color: rgb(var(--theme-text-secondary));
+  color: var(--theme-text-secondary);
   font-size: var(--typography-h6-font-size);
   font-weight: var(--typography-h6-font-weight);
   line-height: var(--typography-h6-line-height);
@@ -102,13 +88,13 @@
 }
 
 .inputWrapper:focus-within > .label {
-  color: rgb(var(--theme-primary-dark));
+  color: var(--colors-primary-dark);
 }
 
 .inputWrapper:focus-within > .label.error {
-  color: rgb(var(--colors-red-500));
+  color: var(--colors-red-500);
 }
 
 .label.error {
-  color: rgb(var(--colors-red-500));
+  color: var(--colors-red-500);
 }

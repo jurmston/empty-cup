@@ -42,24 +42,24 @@
 }
 
 .input:checked ~ .checkboxIcon {
-  background-color: rgb(var(--colors-grey-500));
+  background-color: var(--colors-grey-500);
   background-image: linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0));
 }
 
-.input:checked ~ .checkboxIcon.primary { background-color: rgb(var(--theme-primary)) }
-.input:checked ~ .checkboxIcon.secondary { background-color: rgb(var(--theme-secondary)) }
-.input:checked ~ .checkboxIcon.success { background-color: rgb(var(--theme-success)) }
-.input:checked ~ .checkboxIcon.info { background-color: rgb(var(--theme-info)) }
-.input:checked ~ .checkboxIcon.warning { background-color: rgb(var(--theme-warning)) }
-.input:checked ~ .checkboxIcon.error { background-color: rgb(var(--theme-error)) }
+.input:checked ~ .checkboxIcon.primary { background-color: var(--colors-primary) }
+.input:checked ~ .checkboxIcon.secondary { background-color: var(--colors-secondary) }
+.input:checked ~ .checkboxIcon.success { background-color: var(--colors-success) }
+.input:checked ~ .checkboxIcon.info { background-color: var(--colors-info) }
+.input:checked ~ .checkboxIcon.warning { background-color: var(--colors-warning) }
+.input:checked ~ .checkboxIcon.error { background-color: var(--colors-error) }
 
-.checkbox:hover > .input:checked ~ .checkboxIcon { background-color: rgb(var(--colors-grey-700)) }
-.checkbox:hover > .input:checked ~ .checkboxIcon.primary { background-color: rgb(var(--theme-primary-dark)) }
-.checkbox:hover > .input:checked ~ .checkboxIcon.secondary { background-color: rgb(var(--theme-secondary-dark)) }
-.checkbox:hover > .input:checked ~ .checkboxIcon.success { background-color: rgb(var(--theme-success-dark)) }
-.checkbox:hover > .input:checked ~ .checkboxIcon.info { background-color: rgb(var(--theme-info-dark)) }
-.checkbox:hover > .input:checked ~ .checkboxIcon.warning { background-color: rgb(var(--theme-warning-dark)) }
-.checkbox:hover > .input:checked ~ .checkboxIcon.error { background-color: rgb(var(--theme-error-dark)) }
+.checkbox:hover > .input:checked ~ .checkboxIcon { background-color: var(--colors-grey-700) }
+.checkbox:hover > .input:checked ~ .checkboxIcon.primary { background-color: var(--colors-primary-dark) }
+.checkbox:hover > .input:checked ~ .checkboxIcon.secondary { background-color: var(--colors-secondary-dark) }
+.checkbox:hover > .input:checked ~ .checkboxIcon.success { background-color: var(--colors-success-dark) }
+.checkbox:hover > .input:checked ~ .checkboxIcon.info { background-color: var(--colors-info-dark) }
+.checkbox:hover > .input:checked ~ .checkboxIcon.warning { background-color: var(--colors-warning-dark) }
+.checkbox:hover > .input:checked ~ .checkboxIcon.error { background-color: var(--colors-error-dark) }
 
 .input:checked ~ .checkboxIcon::before {
   content: "";

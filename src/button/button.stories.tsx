@@ -11,7 +11,18 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    color: {
+      control: {
+        type: 'select',
+        options: ['default', 'primary', 'secondary', 'success', 'info', 'warning', 'error'],
+      },
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['text', 'contained', 'outlined', 'link'],
+      },
+    }
   },
 } as ComponentMeta<typeof Button>
 
@@ -37,11 +48,11 @@ WithEndIcon.args = {
 }
 
 export const Layout = () => (
-  <div style={{ display: 'flex', alignItems: 'center' }}>
+  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
     <Button variant="contained">Contained</Button>
-    <Button variant="contained" startIcon={<EditIcon />}>Contained Icon</Button>
+    <Button variant="outlined" startIcon={<EditIcon />}>Contained Icon</Button>
     <Button>Text</Button>
-    <Button startIcon={<EditIcon />}>Text Icon</Button>
+    <Button variant="link" startIcon={<EditIcon />}>Text Icon</Button>
   </div>
 )
 

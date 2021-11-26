@@ -2,10 +2,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(var(--colors-grey-200));
+  background-color: var(--colors-grey-200);
   border-radius: calc(var(--unit) / 2);
   box-sizing: border-box;
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-regular);
   height: 20px;
   font-size: var(--typography-caption-font-size);
   line-height: var(--typography-caption-line-height);
@@ -31,33 +31,33 @@
     color var(--transition-duration-short) var(--transition-curve);
 }
 
-.chip.primary { background-color: rgb(var(--theme-primary-super-light)); color: rgb(var(--theme-primary-super-dark)) }
-.chip.secondary { background-color: rgb(var(--theme-secondary-super-light)); color: rgb(var(--theme-secondary-super-dark)) }
-.chip.success { background-color: rgb(var(--theme-success-super-light)); color: rgb(var(--theme-success-super-dark)) }
-.chip.info { background-color: rgb(var(--theme-info-super-light)); color: rgb(var(--theme-info-super-dark)) }
-.chip.warning { background-color: rgb(var(--theme-warning-super-light)); color: rgb(var(--theme-warning-super-dark)) }
-.chip.error { background-color: rgb(var(--theme-error-super-light)); color: rgb(var(--theme-error-super-dark)) }
+.chip.primary { background-color: var(--colors-primary-light); color: var(--colors-primary-dark) }
+.chip.secondary { background-color: var(--colors-secondary-light); color: var(--colors-secondary-dark) }
+.chip.success { background-color: var(--colors-success-light); color: var(--colors-success-dark) }
+.chip.info { background-color: var(--colors-info-light); color: var(--colors-info-dark) }
+.chip.warning { background-color: var(--colors-warning-light); color: var(--colors-warning-dark) }
+.chip.error { background-color: var(--colors-error-light); color: var(--colors-error-dark) }
 
 .chip.isClickable:hover {
-  background-color: rgb(var(--colors-grey-300));
-  color: rgb(var(--colors-grey-800));
+  background-color: var(--colors-grey-300);
+  color: var(--colors-grey-800);
 }
 
 .chip.isClickable:focus {
   box-shadow: var(--highlight-primary);
 }
 
-.chip.isClickable.primary:hover { background-color: rgb(var(--theme-primary-light)); color: rgb(var(--theme-primary-super-dark)) }
-.chip.isClickable.secondary:hover { background-color: rgb(var(--theme-secondary-light)); color: rgb(var(--theme-secondary-super-dark)) }
-.chip.isClickable.success:hover { background-color: rgb(var(--theme-success-light)); color: rgb(var(--theme-success-super-dark)) }
-.chip.isClickable.info:hover { background-color: rgb(var(--theme-info-light)); color: rgb(var(--theme-info-super-dark)) }
-.chip.isClickable.warning:hover { background-color: rgb(var(--theme-warning-light)); color: rgb(var(--theme-warning-super-dark)) }
-.chip.isClickable.error:hover { background-color: rgb(var(--theme-error-light)); color: rgb(var(--theme-error-super-dark)) }
+.chip.isClickable.primary:hover { background-color: var(--colors-primary-light); color: var(--colors-primary-dark) }
+.chip.isClickable.secondary:hover { background-color: var(--colors-secondary-light); color: var(--colors-secondary-dark) }
+.chip.isClickable.success:hover { background-color: var(--colors-success-light); color: var(--colors-success-dark) }
+.chip.isClickable.info:hover { background-color: var(--colors-info-light); color: var(--colors-info-dark) }
+.chip.isClickable.warning:hover { background-color: var(--colors-warning-light); color: var(--colors-warning-dark) }
+.chip.isClickable.error:hover { background-color: var(--colors-error-light); color: var(--colors-error-dark) }
 
-.chip.isClickable:active { background-color: rgb(var(--colors-grey-500)) }
-.chip.isClickable.primary:active { background-color: rgb(var(--theme-primary)) }
-.chip.isClickable.secondary:active { background-color: rgb(var(--theme-secondary)) }
-.chip.isClickable.success:active { background-color: rgb(var(--theme-success)) }
-.chip.isClickable.info:active { background-color: rgb(var(--theme-info)) }
-.chip.isClickable.warning:active { background-color: rgb(var(--theme-warning)) }
-.chip.isClickable.error:active { background-color: rgb(var(--theme-error)) }
+.chip.isClickable:active { background-color: var(--colors-grey-500) }
+.chip.isClickable.primary:active { background-color: var(--colors-primary) }
+.chip.isClickable.secondary:active { background-color: var(--colors-secondary) }
+.chip.isClickable.success:active { background-color: var(--colors-success) }
+.chip.isClickable.info:active { background-color: var(--colors-info) }
+.chip.isClickable.warning:active { background-color: var(--colors-warning) }
+.chip.isClickable.error:active { background-color: var(--colors-error) }

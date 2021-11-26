@@ -14,7 +14,7 @@
     background-color var(--transition-duration) var(--transition-curve),
     color var(--transition-duration) var(--transition-curve);
   font-weight: var(--font-weight-medium);
-  color: rgb(var(--theme-primary-dark));
+  color: var(--colors-primary-dark);
 }
 
 .menuListItem:not(:last-child) {
@@ -22,17 +22,17 @@
 }
 
 .isSelected {
-  background-color: rgb(var(--theme-primary-super-light));
-  color: rgb(var(--theme-primary-super-dark));
+  background-color: var(--colors-primary-super-light);
+  color: var(--colors-primary-super-dark);
 }
 
 .menuListItem:hover:not(.isDisabled) {
-  background-color: rgb(var(--colors-grey-100));
-  color: rgb(var(--theme-text-primary))l
+  background-color: var(--colors-grey-100);
+  color: var(--colors-text-primary)l
 }
 
 .menuListItem:active:not(.isDisabled) {
-  background-color: rgb(var(--colors-grey-300));
+  background-color: var(--colors-grey-300);
 }
 
 .menuListItem:focus:not(.isDisabled) {
@@ -40,7 +40,7 @@
 }
 
 .isDisabled {
-  color: var(--theme-text-disabled);
+  color: var(--colors-text-disabled);
   background-color: transparent;
   cursor: default;
 }

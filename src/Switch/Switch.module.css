@@ -36,7 +36,7 @@
   background-color: #f5f8fa;
   box-sizing: border-box;
   background-image: linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0));
-  border: 1px solid rgb(var(--colors-grey-300));
+  border: 1px solid var(--colors-grey-300);
   transition:
     background-color var(--transition-duration-short) var(--transition-curve),
     box-shadow var(--transition-duration-short) var(--transition-curve),
@@ -55,13 +55,13 @@
   position: absolute;
   top: var(--knob-margin);
   left: var(--knob-margin);
-  background-color: rgb(var(--colors-white));
+  background-color: var(--colors-white);
   border-radius: var(--knob-size);
   width: var(--knob-size);
   height: var(--knob-size);
   max-width: var(--knob-size);
   max-height: var(--knob-size);
-  border: 1px solid rgb(var(--colors-grey-300));
+  border: 1px solid var(--colors-grey-300);
   box-shadow: var(--shadows-button);
   transition:
     left var(--transition-duration-short) var(--transition-curve),
@@ -69,7 +69,7 @@
 }
 
 .input:checked ~ .track {
-  background-color: rgb(var(--colors-grey-500));
+  background-color: var(--colors-grey-500);
   background-image: linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0));
 }
 
@@ -77,16 +77,16 @@
   left: calc(var(--track-width) - var(--knob-size) - var(--knob-margin) * 2 - 1px);
 }
 
-.input:checked ~ .track.primary { background-color: rgb(var(--theme-primary)); border-color: rgb(var(--theme-primary-dark)) }
-.input:checked ~ .track.secondary { background-color: rgb(var(--theme-secondary)); border-color: rgb(var(--theme-secondary-dark)) }
-.input:checked ~ .track.success { background-color: rgb(var(--theme-success)); border-color: rgb(var(--theme-success-dark)) }
-.input:checked ~ .track.info { background-color: rgb(var(--theme-info)); border-color: rgb(var(--theme-info-dark)) }
-.input:checked ~ .track.warning { background-color: rgb(var(--theme-warning)); border-color: rgb(var(--theme-warning-dark)) }
-.input:checked ~ .track.error { background-color: rgb(var(--theme-error)); border-color: rgb(var(--theme-error-dark)) }
+.input:checked ~ .track.primary { background-color: var(--colors-primary); border-color: var(--colors-primary) }
+.input:checked ~ .track.secondary { background-color: var(--colors-secondary); border-color: var(--colors-secondary) }
+.input:checked ~ .track.success { background-color: var(--colors-success); border-color: var(--colors-success) }
+.input:checked ~ .track.info { background-color: var(--colors-info); border-color: var(--colors-info) }
+.input:checked ~ .track.warning { background-color: var(--colors-warning); border-color: var(--colors-warning) }
+.input:checked ~ .track.error { background-color: var(--colors-error); border-color: var(--colors-error) }
 
-.input:checked ~ .track.primary > .knob { border-color: rgb(var(--theme-primary-dark)) }
-.input:checked ~ .track.secondary > .knob { border-color: rgb(var(--theme-secondary-dark)) }
-.input:checked ~ .track.success > .knob { border-color: rgb(var(--theme-success-dark)) }
-.input:checked ~ .track.info > .knob { border-color: rgb(var(--theme-info-dark)) }
-.input:checked ~ .track.warning > .knob { border-color: rgb(var(--theme-warning-dark)) }
-.input:checked ~ .track.error > .knob { border-color: rgb(var(--theme-error-dark)) }
+.input:checked ~ .track.primary > .knob { border-color: var(--colors-primary) }
+.input:checked ~ .track.secondary > .knob { border-color: var(--colors-secondary) }
+.input:checked ~ .track.success > .knob { border-color: var(--colors-success) }
+.input:checked ~ .track.info > .knob { border-color: var(--colors-info) }
+.input:checked ~ .track.warning > .knob { border-color: var(--colors-warning) }
+.input:checked ~ .track.error > .knob { border-color: var(--colors-error) }

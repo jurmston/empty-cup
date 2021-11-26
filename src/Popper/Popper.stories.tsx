@@ -35,7 +35,7 @@ export const Primary = () => {
         Open
       </Button>
 
-      <Card style={{ marginTop: 16, backgroundColor: `rgb(var(--colors-purple-300))`}}>
+      <Card style={{ padding: 8, marginTop: 16, backgroundColor: `var(--colors-purple-300)`}}>
         <h3>Just here for some layering.</h3>
       </Card>
 

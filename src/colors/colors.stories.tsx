@@ -155,15 +155,28 @@ function PaletteGroup({ value, title }) {
       style={{
         width: '100%',
         display: 'grid',
-        gridTemplateColumns: '1.25fr repeat(5, 1fr)',
-        gridTemplateRows: '5em',
+        gridTemplateColumns: '1.25fr repeat(10, 1fr)',
+        gridTemplateRows: '2em 5em',
         gridTemplateAreas: `
-          "title color-0 color-1 color-2 color-3 color-4"
+          "title v50 v100 v200 v300 v400 v500 v600 v700 v800 v900"
+          "title color-0 color-0 color-1 color-1 color-2 color-2 color-3 color-3 color-4 color-4"
         `,
         gap: 8,
       }}
     >
       <ColorTitle value={value} title={title} />
+
+      {variants.map(variant => (
+        <div
+          key={variant}
+          style={{
+            borderRadius: 8,
+            backgroundColor: `var(--colors-${value}-${variant})`,
+            gridArea: `v${variant}`,
+          }}
+        />
+      ))}
+
       {themeVariants.map((variant, index) => (
         <ColorDisplay
           key={variant}

@@ -1,11 +1,11 @@
-.textSecondary { color: var(--theme-text-secondary) }
-.textDisabled { color: var(--theme-text-disabled) }
-.primary { color: rgb(var(--theme-primary)) }
-.secondary { color: rgb(var(--theme-secondary)) }
-.success { color: rgb(var(--theme-success)) }
-.info { color: rgb(var(--theme-info)) }
-.warning { color: rgb(var(--theme-warning)) }
-.error { color: rgb(var(--theme-error)) }
+.textSecondary { color: var(--colors-text-secondary) }
+.textDisabled { color: var(--colors-text-disabled) }
+.primary { color: var(--colors-primary) }
+.secondary { color: var(--colors-secondary) }
+.success { color: var(--colors-success) }
+.info { color: var(--colors-info) }
+.warning { color: var(--colors-warning) }
+.error { color: var(--colors-error) }
 
 .caption {
   font-size: var(--typography-caption-font-size);

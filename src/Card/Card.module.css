@@ -1,5 +1,5 @@
 .card {
-  background-color: rgb(var(--theme-background-paper));
+  background-color: var(--colors-background-paper);
   border-radius: var(--unit);
 }
 
@@ -8,5 +8,5 @@
 }
 
 .outlined {
-  border: 1px solid var(--theme-divider);
+  border: 1px solid var(--colors-divider);
 }

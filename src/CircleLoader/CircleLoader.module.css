@@ -7,11 +7,10 @@
 }
 
 .backgroundCircle {
-  stroke: rgb(var(--colors-grey-200));
+  stroke: var(--colors-grey-200);
 }
 
 .progressCircle {
-  stroke: rgb(var(--colors-purple-500));
   stroke-linecap: round;
 }
 

@@ -29,8 +29,8 @@ export const Primary = () => {
           height: 56,
           maxHeight: 56,
           minHeight: 56,
-          borderBottom: '1px solid rgb(var(--colors-grey-300))',
-          backgroundColor: 'rgb(var(--colors-grey-100))',
+          borderBottom: '1px solid var(--colors-grey-300)',
+          backgroundColor: 'var(--colors-grey-100)',
         }}
       >
         <h3>Hello!</h3>
