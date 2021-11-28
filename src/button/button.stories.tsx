@@ -1,69 +1,47 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react/types-6-0'
+import { Story } from '@storybook/react'
+import { Button, ButtonProps, BUTTON_VARIANTS } from './Button'
+import { PALETTES } from '../styles'
+import FilterIcon from '../icons/FilterListRounded'
+import CancelIcon from '../icons/CancelRounded'
 
-import EditIcon from '../icons/EditRounded'
-import CloseIcon from '../icons/CloseRounded'
-import { Button } from './Button'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    color: {
-      control: {
-        type: 'select',
-        options: ['default', 'primary', 'secondary', 'success', 'info', 'warning', 'error'],
-      },
+    palette: {
+      control: 'select',
+      options: PALETTES,
     },
     variant: {
-      control: {
-        type: 'select',
-        options: ['text', 'contained', 'outlined', 'link'],
-      },
-    }
-  },
-} as ComponentMeta<typeof Button>
+      control: 'select',
+      options: BUTTON_VARIANTS,
+    },
+    startIcon: {
+      control: 'boolean',
+    },
+    endIcon: {
+      control: 'boolean',
+    },
+  }
+} as Meta
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
-
-export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  children: 'Button',
-}
-
-export const WithStartIcon = Template.bind({})
-WithStartIcon.args = {
-  startIcon: <EditIcon />,
-  children: 'Button',
-}
-
-export const WithEndIcon = Template.bind({})
-WithEndIcon.args = {
-  endIcon: <CloseIcon />,
-  children: 'Button',
-}
-
-export const Layout = () => (
-  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-    <Button variant="contained">Contained</Button>
-    <Button variant="outlined" startIcon={<EditIcon />}>Contained Icon</Button>
-    <Button>Text</Button>
-    <Button variant="link" startIcon={<EditIcon />}>Text Icon</Button>
-  </div>
+// Create a master template for mapping args to render the Button component
+const Template: Story<ButtonProps> = (args) => (
+  <Button
+    {...args}
+    startIcon={args.startIcon ? <FilterIcon /> : null}
+    endIcon={args.endIcon ? <CancelIcon /> : null}
+  />
 )
 
-// export const Large = Template.bind({})
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// }
-
-// export const Small = Template.bind({})
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// }
+// Reuse that template for creating different stories
+export const Primary = Template.bind({})
+Primary.args = {
+  children: 'Button',
+  palette: 'primary',
+  variant: 'text',
+  startIcon: false,
+}

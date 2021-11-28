@@ -1,0 +1,205 @@
+@import './root.css';
+/**
+ * Baseline resets
+ * Inspired by Josh Comeau
+ * See: https://www.joshwcomeau.com/css/custom-css-reset/
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+strong, b {
+  font-weight: var(--typography--font-weight-bold);
+}
+
+body {
+  margin: 0;
+  color: var(--palette--text-primary);
+  background-color: var(--palette--background);
+  font-weight: var(--typography--base-font-weight);
+  font-size: var(--typography--base-font-size);
+  line-height: var(--typography--base-line-height);
+  letter-spacing: var(--typography--base-letter-spacing);
+  font-family: var(--typography--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::backdrop {
+  background-color: var(--palette--background);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  margin: 0;
+  font-weight: var(--typography--h1-font-weight);
+  font-size: var(--typography--h1-font-size);
+  line-height: var(--typography--h1-line-height);
+  letter-spacing: var(--typography--h1-letter-spacing);
+  font-family: var(--typography--font-family);
+}
+
+h2 {
+  margin: 0;
+  font-weight: var(--typography--h2-font-weight);
+  font-size: var(--typography--h2-font-size);
+  line-height: var(--typography--h2-line-height);
+  letter-spacing: var(--typography--h2-letter-spacing);
+  font-family: var(--typography--font-family);
+}
+
+h3 {
+  margin: 0;
+  font-weight: var(--typography--h3-font-weight);
+  font-size: var(--typography--h3-font-size);
+  line-height: var(--typography--h3-line-height);
+  letter-spacing: var(--typography--h3-letter-spacing);
+  font-family: var(--typography--font-family);
+}
+
+h4, h5 {
+  margin: 0;
+  font-weight: var(--typography--h4-font-weight);
+  font-size: var(--typography--h4-font-size);
+  line-height: var(--typography--h4-line-height);
+  letter-spacing: var(--typography--h4-letter-spacing);
+  font-family: var(--typography--font-family);
+}
+
+h6 {
+  margin: 0;
+  font-weight: var(--typography--h6-font-weight);
+  font-size: var(--typography--h6-font-size);
+  line-height: var(--typography--h6-line-height);
+  letter-spacing: var(--typography--h6-letter-spacing);
+  font-family: var(--typography--font-family);
+}
+
+p {
+  margin: 0;
+  font-family: var(--typography--font-family);
+}
+
+/** Global baselines */
+button {
+  /* Baseline */
+  font-family: var(--typography--font-family);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight--color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+}
+
+button::-moz-focus-inner {
+  border-style: none; /* Remove Firefox dotted outine */
+}
+
+input {
+  font-family: var(--typography--font-family);
+  box-sizing: border-box;
+  color: inherit;
+  position: relative;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 2px 1px;
+  margin: 0;
+  flex: 1;
+  line-height: 1.4375em;
+}
+
+code {
+  font-family: var(--typography--font-family-mono);
+}
+
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tbody {
+ display: table-row-group;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tfoot {
+  display: table-footer-group;
+}
+
+tr {
+  display: table-row;
+  color: inherit;
+  vertical-align: middle;
+  outline: 0;
+}
+
+th, td {
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: left;
+  padding: 10px 16px;
+}
+
+th {
+  font-weight: var(--typography--font-weight-bold);
+}
+
+td {
+  font-weight: var(--typography--font-weight-regular);
+}
+
+tbody td {
+  border-bottom: 1px solid var(--palette--grey-300);
+}
+
+tbody tr:first-child td {
+  border-top: 2px solid var(--palette--grey-500);
+}
+
+tbody tr:last-child td {
+  border-bottom: 2px solid var(--palette--grey-500);
+}
+
+#root, #__next {
+  isolation: isolate;
+}

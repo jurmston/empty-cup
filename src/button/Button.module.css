@@ -1,4 +1,4 @@
-.button {
+.root {
   --button--color: var(--palette--default-500);
   --button--bg: transparent;
   --button--border: transparent;
@@ -10,31 +10,31 @@
   border-color: var(--button--border);
 
   font-size: 16px;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--typography--font-weight-medium);
 
   box-sizing: border-box;
   border-width: 1px;
   border-style: solid;
   border-radius: calc(var(--unit) * 0.5);
   min-width: calc(var(--unit) * 8);
-  padding: 7px 8px;
+  padding: 4px 8px;
 
   transition:
-    background-color var(--transition-duration-short) var(--transition-curve),
-    color var(--transition-duration-short) var(--transition-curve),
-    box-shadow var(--transition-duration-short) var(--transition-curve);
+    background-color var(--transition--duration-short) var(--transition--curve),
+    color var(--transition--duration-short) var(--transition--curve),
+    box-shadow var(--transition--duration-short) var(--transition--curve);
 }
 
-.button.contained, .button.outlined {
-  box-shadow: var(--shadows-button);
+.root.contained, .root.outlined {
+  box-shadow: var(--shadows--xs);
 }
 
-.button.contained:hover, .button.outlined:hover {
-  box-shadow: var(--shadows-button-hovered);
+.root.contained:hover, .root.outlined:hover {
+  box-shadow: var(--shadows--sm);
 }
 
 /* variant = 'link */
-.button.link {
+.root.link {
   background-color: transparent;
   border: none;
   margin-top: -3px;
@@ -42,39 +42,39 @@
   min-width: 0;
 }
 
-.button.link:hover {
+.root.link:hover {
   background-color: transparent;
   color: var(--palette--grey-900);
   text-decoration: underline;
 }
 
-.button.link:active {
+.root.link:active {
   background-color: transparent;
   color: var(--palette--grey-700);
 }
 
-.button:hover {
+.root:hover {
   background-color: var(--button--hover-bg);
 }
 
-.button:active {
+.root:active {
   background-color: var(--button--active-bg);
 }
 
-.button:disabled {
+.root:disabled {
   cursor: default;
   color: var(--palette--text-disabled);
   background-color: transparent;
 }
 
-.button.contained:disabled {
+.root.contained:disabled {
   box-shadow: none;
   background-color: var(--palette--grey-200);
   border-color: var(--palette--grey-300);
 }
 
 /* Pressable */
-.button::before {
+.root::before {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -83,7 +83,7 @@
   border-radius: calc(var(--unit) * 0.5);;
 }
 
-.button:focus::before {
+.root:focus::before {
   box-shadow: var(--highlight--primary);
 }
 

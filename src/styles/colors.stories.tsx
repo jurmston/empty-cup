@@ -47,7 +47,7 @@ const palettes = [
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Colors/Colors',
+  title: 'Styles/Colors',
 }
 
 function ColorDisplay({ value, variant, index }) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScreenProvider } from '../src/ScreenProvider'
-import '../src/index.css'
+import '../src/styles/main.css'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

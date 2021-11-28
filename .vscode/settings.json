@@ -1,4 +1,5 @@
 {
   "terminal.integrated.cursorStyle": "line",
-  "editor.renderWhitespace": "all"
+  "editor.renderWhitespace": "all",
+  "workbench.editor.closeEmptyGroups": false
 }

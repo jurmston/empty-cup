@@ -1,10 +1,14 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import styles from './AddOn.module.css'
+import styles from './InputAddOn.module.css'
 import { OverrideProps } from '../OverridableComponent'
 
 
-interface AddOnTypeMap<P = {}, D extends React.ElementType = 'div'> {
+export const InputAddOnClasses = {
+  root: 'Genjo-input-add-on',
+}
+
+interface InputAddOnTypeMap<P = {}, D extends React.ElementType = 'div'> {
   props: P & {
     /**
      * The content of the component.
@@ -15,24 +19,24 @@ interface AddOnTypeMap<P = {}, D extends React.ElementType = 'div'> {
   defaultComponent: D
 }
 
-type AddOnProps<
-  D extends React.ElementType = AddOnTypeMap['defaultComponent'],
+type InputAddOnProps<
+  D extends React.ElementType = InputAddOnTypeMap['defaultComponent'],
   P = {}
-> = OverrideProps<AddOnTypeMap<P, D>, D>
+> = OverrideProps<InputAddOnTypeMap<P, D>, D>
 
 
-export function AddOn({
+export function InputAddOn({
   position = 'right',
   ...rest
-}: AddOnProps) {
+}: InputAddOnProps) {
 
   const isClickable = Boolean(rest.onClick)
-  const AddOnComponent = isClickable ? 'button' : 'div'
+  const InputAddOnComponent = isClickable ? 'button' : 'div'
 
   return (
-    <AddOnComponent
+    <InputAddOnComponent
       {...rest}
-      className={clsx(styles.addOn, {
+      className={clsx(InputAddOnClasses.root, styles.addOn, {
         [styles.isClickable]: isClickable,
         [styles.left]: position === 'left',
         [styles.right]: position === 'right',

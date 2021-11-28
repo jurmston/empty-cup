@@ -12,22 +12,22 @@
 }
 
 .input {
-  border: 1px solid var(--colors-grey-300);
-  background-color: var(--colors-white);
+  border: 1px solid var(--palette--grey-300);
+  background-color: var(--palette--white);
   border-radius: calc(var(--unit) / 2);
-  color: var(--colors-text-primary);
-  font-size: var(--typography-base-font-size);
+  color: var(--palette--text-primary);
+  font-size: var(--typography--base-font-size);
   display: inline-flex;
   align-items: stretch;
   position: relative;
   transition:
-    background-color var(--transition-duration) var(--transition-curve),
-    box-shadow var(--transition-duration) var(--transition-curve),
-    border-color var(--transition-duration) var(--transition-curve);
+    background-color var(--transition--duration) var(--transition--curve),
+    box-shadow var(--transition--duration) var(--transition--curve),
+    border-color var(--transition--duration) var(--transition--curve);
 }
 
 .inputInner {
-  padding: 4px;
+  padding: 2px 4px;
   display: flex;
   flex: 1;
   align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .input.filled {
-  background-color: var(--colors-grey-100);
+  background-color: var(--palette--grey-100);
 }
 
 .input.fullWidth {
@@ -47,11 +47,11 @@
 }
 
 .input.error {
-  border-color: var(--colors-red);
+  border-color: var(--palette--error);
 }
 
 .adornment {
-  color: var(--theme-text-secondary);
+  color: var(--palette--text-secondary);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,34 +67,34 @@
 }
 
 .input.isFocused {
-  background-color: var(--colors-white);
-  border-color: var(--theme-primary);
-  box-shadow: var(--highlight-primary);
+  background-color: var(--palette--white);
+  border-color: var(--palette--primary);
+  box-shadow: var(--highlight--primary);
 }
 
 .input.error:focus-within {
-  border-color: var(--colors-red);
-  box-shadow: var(--highlight-error);
+  border-color: var(--palette--error);
+  box-shadow: var(--highlight--error);
 }
 
 .label {
-  color: var(--theme-text-secondary);
-  font-size: var(--typography-h6-font-size);
-  font-weight: var(--typography-h6-font-weight);
-  line-height: var(--typography-h6-line-height);
-  letter-spacing: var(--typography-h6-letter-spacing);
+  color: var(--palette--text-secondary);
+  font-size: var(--typography--h6-font-size);
+  font-weight: var(--typography--h6-font-weight);
+  line-height: var(--typography--h6-line-height);
+  letter-spacing: var(--typography--h6-letter-spacing);
   transition:
-    color var(--transition-duration) var(--transition-curve),
+    color var(--transition--duration) var(--transition--curve),
 }
 
 .inputWrapper:focus-within > .label {
-  color: var(--colors-primary-dark);
+  color: var(--palette--primary-700);
 }
 
 .inputWrapper:focus-within > .label.error {
-  color: var(--colors-red-500);
+  color: var(--palette--error);
 }
 
 .label.error {
-  color: var(--colors-red-500);
+  color: var(--palette--error);
 }

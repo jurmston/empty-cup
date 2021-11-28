@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import HelpIcon from '../icons/HelpRounded'
-import { AddOn } from '../AddOn'
+import { InputAddOn } from './InputAddOn'
 import { Input } from './Input'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -26,5 +26,5 @@ export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   startAdornment: <HelpIcon />,
-  endAddOn: <AddOn component="button" onClick={() => alert('hi')}>Click</AddOn>,
+  endAddOn: <InputAddOn component="button" onClick={() => alert('hi')}>Click</InputAddOn>,
 }

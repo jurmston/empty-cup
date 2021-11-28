@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { ScreenContext } from './ScreenContext'
 import { useBreakpoints } from './useBreakpoints'
+import useEnhancedEffect from '../useEnhancedEffect'
 
 interface ScreenProviderProps {
   children: React.ReactNode
@@ -41,7 +42,7 @@ export function ScreenProvider({ children }: ScreenProviderProps) {
   )
 
   // Add the onResize event listener to the window.
-  React.useEffect(
+  useEnhancedEffect(
     () => {
       if (!window) {
         return

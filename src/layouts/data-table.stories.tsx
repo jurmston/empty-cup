@@ -3,8 +3,7 @@ import React from 'react'
 import Container from '../Container'
 import Stack from '../Stack'
 import Chip from '../Chip'
-import Input from '../Input'
-import AddOn from '../AddOn'
+import Input, { InputAddOn } from '../Input'
 
 import FilterIcon from '../icons/FilterListRounded'
 import DownIcon from '../icons/KeyboardArrowDownRounded'
@@ -50,9 +49,9 @@ export const Primary = () => {
           <Input
             placeholder="Active Companies"
             endAddOn={
-              <AddOn position="right" onClick={() => alert('filter')}>
+              <InputAddOn position="right" onClick={() => alert('filter')}>
                 <FilterIcon />
-              </AddOn>
+              </InputAddOn>
             }
           />
 
