@@ -1,11 +1,3 @@
 .icon {
   fill: currentColor;
 }
-
-.icon.primary { color: rgb(var(--theme-primary)) }
-.icon.secondary { color: rgb(var(--theme-secondary)) }
-.icon.success { color: rgb(var(--theme-success)) }
-.icon.info { color: rgb(var(--theme-info)) }
-.icon.warning { color: rgb(var(--theme-warning)) }
-.icon.error { color: rgb(var(--theme-error)) }
-.icon.action { color: rgb(var(--colors-grey-500)) }

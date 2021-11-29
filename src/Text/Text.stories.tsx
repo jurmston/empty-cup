@@ -14,7 +14,7 @@ import {
 } from './Text'
 
 
-const colors = miscColors.concat(palettes.flatMap(p => shades.map(s => `${p}-${s}`)))
+const colors = palettes.concat(miscColors.concat(palettes.flatMap(p => shades.map(s => `${p}-${s}`))))
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -73,7 +73,7 @@ const demoText = 'The quick brown fox jumps over the lazy dog.'
 export const Primary = Template.bind({})
 Primary.args = {
   children: demoText,
-  palette: 'text-primary',
+  color: 'text-primary',
 }
 
 

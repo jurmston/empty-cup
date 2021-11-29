@@ -1,27 +1,29 @@
 import * as React from 'react'
-import clsx from 'clsx'
-import { ThemeColor } from '../types'
 import styles from './Switch.module.css'
-
+import { Color } from '../styles'
 
 interface SwitchProps extends React.HTMLProps<HTMLInputElement> {
-  color?: ThemeColor
+  color?: Color
   label?: string
 }
 
 
-export function Switch({ id, className, label, color = 'default', ...rest }: SwitchProps) {
+export function Switch({ id, className, label, color = 'primary', ...rest }: SwitchProps) {
+  const computedStyle = {
+    '--switch--color': `var(--palette--${color})`
+  }
+
   return (
-    <span className={styles.switch}>
+    <span className={styles.switch} style={computedStyle as any}>
       <input
         id={id}
         type="checkbox"
-        className={clsx(styles.input, className)}
+        className={styles.input}
         {...rest}
       />
 
       <span
-        className={clsx(styles.track, styles[color])}
+        className={styles.track}
       >
         <span className={styles.knob} />
       </span>

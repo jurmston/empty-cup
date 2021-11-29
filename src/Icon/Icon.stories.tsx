@@ -8,7 +8,7 @@ export default {
 export const Primary = () => {
   const [style, setStyle] = React.useState('Rounded')
   const [color, setColor] = React.useState('default')
-  const [size, setSize] = React.useState(16)
+  const [size, setSize] = React.useState(1)
 
   function handleStyleChange(event) {
     setStyle(event.target.value)
@@ -41,10 +41,10 @@ export const Primary = () => {
       </select>
 
       <select value={size} onChange={handleSizeChange}>
-        <option value={14}>Small</option>
-        <option value={16}>Medium</option>
-        <option value={18}>Large</option>
-        <option value={24}>X-Large</option>
+        <option value={0.75}>Small</option>
+        <option value={1}>Medium</option>
+        <option value={1.5}>Large</option>
+        <option value={2}>X-Large</option>
       </select>
 
       <div style={{ marginBottom: 16 }} />
@@ -65,7 +65,7 @@ export const Primary = () => {
             <div>
               <IconComponent color={color} size={size} />
             </div>
-            <div>
+            <div style={{ fontSize: 12 }}>
               {title}
             </div>
           </div>

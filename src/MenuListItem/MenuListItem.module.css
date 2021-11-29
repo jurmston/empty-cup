@@ -11,10 +11,10 @@
   align-items: stretch;
   outline: 0;
   transition:
-    background-color var(--transition-duration) var(--transition-curve),
-    color var(--transition-duration) var(--transition-curve);
-  font-weight: var(--font-weight-medium);
-  color: var(--colors-primary-dark);
+    background-color var(--transition--duration) var(--transition--curve),
+    color var(--transition--duration-duration) var(--transition--curve);
+  font-weight: var(--typography--font-weight-medium);
+  color: var(--palette--primary-700);
 }
 
 .menuListItem:not(:last-child) {
@@ -22,17 +22,17 @@
 }
 
 .isSelected {
-  background-color: var(--colors-primary-super-light);
-  color: var(--colors-primary-super-dark);
+  background-color: var(--palette--primary-50);
+  color: var(--palette--primary-900);
 }
 
 .menuListItem:hover:not(.isDisabled) {
-  background-color: var(--colors-grey-100);
-  color: var(--colors-text-primary)l
+  background-color: var(--palette--grey-100);
+  color: var(--palette--text-primary)l
 }
 
 .menuListItem:active:not(.isDisabled) {
-  background-color: var(--colors-grey-300);
+  background-color: var(--palette--grey-300);
 }
 
 .menuListItem:focus:not(.isDisabled) {
@@ -40,7 +40,7 @@
 }
 
 .isDisabled {
-  color: var(--colors-text-disabled);
+  color: var(--palette--text-disabled);
   background-color: transparent;
   cursor: default;
 }

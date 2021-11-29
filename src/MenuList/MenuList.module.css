@@ -7,6 +7,6 @@
 
 .container {
   border-radius: var(--unit);
-  background-color: var(--colors-white);
-  box-shadow: var(--shadows-card);
+  background-color: var(--palette--ui-surface);
+  box-shadow: var(--shadows--md);
 }

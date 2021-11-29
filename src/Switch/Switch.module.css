@@ -1,6 +1,7 @@
 
 
 .switch {
+  --switch--color: var(--palette--primary);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -32,19 +33,19 @@
   height: var(--track-height);
   max-width: var(--track-width);
   max-height: var(--track-height);
-  box-shadow: var(--shadows-button);
+  box-shadow: var(--shadows--xs);
   background-color: #f5f8fa;
   box-sizing: border-box;
   background-image: linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0));
-  border: 1px solid var(--colors-grey-300);
+  border: 1px solid var(--palette--default-300);
   transition:
-    background-color var(--transition-duration-short) var(--transition-curve),
-    box-shadow var(--transition-duration-short) var(--transition-curve),
-    border-color var(--transition-duration-short) var(--transition-curve);
+    background-color var(--transition--duration-shortest) var(--transition--curve),
+    box-shadow var(--transition--duration-shortest) var(--transition--curve),
+    border-color var(--transition--duration-shortest) var(--transition--curve);
 }
 
 .track:hover {
-  box-shadow: var(--shadows-button-hovered);
+  box-shadow: var(--shadows--sm);
 }
 
 .switch:focus-within > .track {
@@ -55,38 +56,26 @@
   position: absolute;
   top: var(--knob-margin);
   left: var(--knob-margin);
-  background-color: var(--colors-white);
+  background-color: var(--palette--white);
   border-radius: var(--knob-size);
   width: var(--knob-size);
   height: var(--knob-size);
   max-width: var(--knob-size);
   max-height: var(--knob-size);
-  border: 1px solid var(--colors-grey-300);
-  box-shadow: var(--shadows-button);
+  border: 1px solid var(--palette--default-300);
+  box-shadow: var(--shadows--xs);
   transition:
-    left var(--transition-duration-short) var(--transition-curve),
-    border-color var(--transition-duration-short) var(--transition-curve);
+    left var(--transition--duration-shortest) var(--transition--curve),
+    border-color var(--transition--duration-shortest) var(--transition--curve);
 }
 
 .input:checked ~ .track {
-  background-color: var(--colors-grey-500);
+  background-color: var(--switch--color);
+  border-color: var(--switch--color);
   background-image: linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0));
 }
 
 .input:checked ~ .track .knob {
   left: calc(var(--track-width) - var(--knob-size) - var(--knob-margin) * 2 - 1px);
+  border-color: var(--switch--color);
 }
-
-.input:checked ~ .track.primary { background-color: var(--colors-primary); border-color: var(--colors-primary) }
-.input:checked ~ .track.secondary { background-color: var(--colors-secondary); border-color: var(--colors-secondary) }
-.input:checked ~ .track.success { background-color: var(--colors-success); border-color: var(--colors-success) }
-.input:checked ~ .track.info { background-color: var(--colors-info); border-color: var(--colors-info) }
-.input:checked ~ .track.warning { background-color: var(--colors-warning); border-color: var(--colors-warning) }
-.input:checked ~ .track.error { background-color: var(--colors-error); border-color: var(--colors-error) }
-
-.input:checked ~ .track.primary > .knob { border-color: var(--colors-primary) }
-.input:checked ~ .track.secondary > .knob { border-color: var(--colors-secondary) }
-.input:checked ~ .track.success > .knob { border-color: var(--colors-success) }
-.input:checked ~ .track.info > .knob { border-color: var(--colors-info) }
-.input:checked ~ .track.warning > .knob { border-color: var(--colors-warning) }
-.input:checked ~ .track.error > .knob { border-color: var(--colors-error) }
