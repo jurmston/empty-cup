@@ -1,16 +1,16 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import { ThemeColor } from '../types'
 import styles from './Checkbox.module.css'
+import { Palette } from '../styles'
 
 
 interface CheckboxProps extends React.HTMLProps<HTMLInputElement> {
-  color?: ThemeColor
+  palette?: Palette
   label?: string
 }
 
 
-export function Checkbox({ id, label, color = 'default', ...rest }: CheckboxProps) {
+export function Checkbox({ id, label, palette = 'default', ...rest }: CheckboxProps) {
   return (
     <span className={styles.checkbox}>
       <input
@@ -21,7 +21,8 @@ export function Checkbox({ id, label, color = 'default', ...rest }: CheckboxProp
       />
 
       <span
-        className={clsx(styles.checkboxIcon, styles[color])}
+        style={{ backgroundColor: `var(--palette--${palette})`}}
+        className={styles.checkboxIcon}
       />
 
       <label htmlFor={id}>

@@ -1,17 +1,15 @@
-.textSecondary { color: var(--colors-text-secondary) }
-.textDisabled { color: var(--colors-text-disabled) }
-.primary { color: var(--colors-primary) }
-.secondary { color: var(--colors-secondary) }
-.success { color: var(--colors-success) }
-.info { color: var(--colors-info) }
-.warning { color: var(--colors-warning) }
-.error { color: var(--colors-error) }
+.text {
+  --text--color: var(--palette--text-primary);
+  --text--font-size: var(--typography--font-size);
+  color: var(--text--color);
+  font-size: var(--text--font-size);
+}
 
 .caption {
-  font-size: var(--typography-caption-font-size);
-  font-weight: var(--typography-caption-font-weight);
-  line-height: var(--typography-caption-line-height);
-  letter-spacing: var(--typography-caption-letter-spacing);
+  font-size: var(--typography--caption-font-size);
+  font-weight: var(--typography--caption-font-weight);
+  line-height: var(--typography--caption-line-height);
+  letter-spacing: var(--typography--caption-letter-spacing);
 }
 
 .link {

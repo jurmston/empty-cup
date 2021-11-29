@@ -388,37 +388,37 @@
   --typography--font-family-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --typography--base-font-size: 1rem;
-  --typography--base-font-weight: var(--font-weight-regular);
+  --typography--base-font-weight: var(--typography--font-weight-regular);
   --typography--base-line-height: 1.43;
   --typography--base-letter-spacing: 0.01071em;
 
   --typography--h1-font-size: 2.42rem;
-  --typography--h1-font-weight: var(--font-weight-bold);
+  --typography--h1-font-weight: var(--typography--font-weight-bold);
   --typography--h1-line-height: 1.235;
   --typography--h1-letter-spacing: 0.00441em;
 
   --typography--h2-font-size: 1.71rem;
-  --typography--h2-font-weight: var(--font-weight-bold);
+  --typography--h2-font-weight: var(--typography--font-weight-bold);
   --typography--h2-line-height: 1.334;
   --typography--h2-letter-spacing: 0.0em;
 
   --typography--h3-font-size: 1.43rem;
-  --typography--h3-font-weight: var(--font-weight-bold);
+  --typography--h3-font-weight: var(--typography--font-weight-bold);
   --typography--h3-line-height: 1.6;
   --typography--h3-letter-spacing: 0.00441em;
 
   --typography--h4-font-size: 1.14rem;
-  --typography--h4-font-weight: var(--font-weight-bold);
+  --typography--h4-font-weight: var(--typography--font-weight-bold);
   --typography--h4-line-height: 1.57;
   --typography--h4-letter-spacing: 0.00625em;
 
   --typography--h6-font-size: 1rem;
-  --typography--h6-font-weight: var(--font-weight-medium);
+  --typography--h6-font-weight: var(--typography--font-weight-medium);
   --typography--h6-line-height: 1.57;
   --typography--h6-letter-spacing: 0.00714em;
 
   --typography--caption-font-size: 0.75rem;
-  --typography--caption-font-weight: var(--font-weight-regular);
+  --typography--caption-font-weight: var(--typography--font-weight-regular);
   --typography--caption-line-height: 1.66;
   --typography--caption-letter-spacing: 0.0333em;
 

@@ -1,4 +1,4 @@
-.addOn {
+.root {
   padding-right: var(--unit);
   padding-left: var(--unit);
   background-color: var(--palette--grey-100);
@@ -28,6 +28,11 @@
 .isClickable:hover {
   background-color: var(--palette--grey-200);
 }
+
+.isClickable:active {
+  background-color: var(--palette--grey-300);
+}
+
 
 .isClickable:focus {
   box-shadow: var(--highlight--primary);

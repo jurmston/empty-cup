@@ -1,9 +1,17 @@
 import * as React from 'react'
 import clsx from 'clsx'
 import styles from './Input.module.css'
+import { InputLabel } from './InputLabel'
 
 
-export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
+
+export type InputLabelOrientation = 'horizontal' | 'vertical'
+export const LABEL_ORIENTATIONS: InputLabelOrientation[] = ['horizontal', 'vertical']
+
+export type InputVariant = 'default' | 'pill'
+export const INPUT_VARIANTS: InputVariant[] = ['default', 'pill']
+
+export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   disableFullWidth?: boolean
   endAdornment?: React.ReactNode
   error?: boolean
@@ -11,17 +19,19 @@ export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   hideLabel?: boolean
   id?: string
   label?: string
-  orientation?: 'horizontal' | 'vertical'
+  orientation?: InputLabelOrientation
   startAdornment?: React.ReactNode
-  variant?: 'default' | 'pill',
+  variant?: InputVariant,
   endAddOn?: React.ReactNode
+  startAddOn?: React.ReactNode
+  labelProps?: React.HTMLProps<HTMLLabelElement>
 }
 
 export function Input({
   error = false,
   disableFullWidth = false,
-  startAdornment: startAdornmentFromProps,
-  endAdornment: endAdornmentFromProps,
+  startAdornment,
+  endAdornment,
   label: labelFromProps = '',
   id = '',
   hideLabel = false,
@@ -29,6 +39,8 @@ export function Input({
   variant = 'default',
   filled = false,
   endAddOn,
+  startAddOn,
+  labelProps,
   ...inputProps
 }: InputProps) {
   const [isFocused, setIsFocused] = React.useState(false)
@@ -37,30 +49,6 @@ export function Input({
   function handleClick(event: React.MouseEvent<HTMLDivElement>) {
     ref.current?.focus()
   }
-
-  const startAdornment = startAdornmentFromProps && (
-    <span className={clsx(styles.adornment, styles.startAdornment)}>
-      {startAdornmentFromProps}
-    </span>
-  )
-
-  const endAdornment = endAdornmentFromProps && (
-    <span className={clsx(styles.adornment, styles.endAdornment)}>
-      {endAdornmentFromProps}
-    </span>
-  )
-
-  const labelEl = (
-    <label
-      className={clsx(styles.label, {
-        [styles.error]: error,
-        [styles.hidden]: hideLabel,
-      })}
-      htmlFor={id}
-    >
-      {labelFromProps}
-    </label>
-  )
 
   function handleFocus(event: React.FocusEvent<HTMLInputElement>) {
     setIsFocused(true)
@@ -72,13 +60,24 @@ export function Input({
     inputProps?.onBlur?.(event)
   }
 
+  const label = !hideLabel && Boolean(labelFromProps) && (
+    <InputLabel
+      {...labelProps}
+      htmlFor={id}
+      hasError={error}
+    >
+      {labelFromProps}
+    </InputLabel>
+
+  )
+
   return (
     <div
       className={clsx(styles.inputWrapper, {
         [styles.vertical]: orientation === 'vertical',
       })}
     >
-      {labelEl}
+      {label}
       <div
         onClick={handleClick}
         className={clsx(styles.input, {
@@ -89,6 +88,8 @@ export function Input({
           [styles.isFocused]: isFocused,
         })}
       >
+        {startAddOn}
+
         <div className={styles.inputInner}>
           {startAdornment}
           <input

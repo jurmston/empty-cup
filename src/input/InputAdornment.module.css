@@ -1,0 +1,15 @@
+.adornment {
+  color: var(--palette--text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  margin-right: calc(var(--unit) * 0.5);
+}
+
+.end {
+  margin-left: calc(var(--unit) * 0.5);
+}

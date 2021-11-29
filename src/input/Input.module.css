@@ -50,22 +50,6 @@
   border-color: var(--palette--error);
 }
 
-.adornment {
-  color: var(--palette--text-secondary);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.startAdornment {
-  margin-right: calc(var(--unit) * 0.5);
-}
-
-.endAdornment {
-  margin-left: calc(var(--unit) * 0.5);
-}
-
 .input.isFocused {
   background-color: var(--palette--white);
   border-color: var(--palette--primary);
@@ -75,16 +59,6 @@
 .input.error:focus-within {
   border-color: var(--palette--error);
   box-shadow: var(--highlight--error);
-}
-
-.label {
-  color: var(--palette--text-secondary);
-  font-size: var(--typography--h6-font-size);
-  font-weight: var(--typography--h6-font-weight);
-  line-height: var(--typography--h6-line-height);
-  letter-spacing: var(--typography--h6-letter-spacing);
-  transition:
-    color var(--transition--duration) var(--transition--curve),
 }
 
 .inputWrapper:focus-within > .label {

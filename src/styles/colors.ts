@@ -26,7 +26,7 @@ export type ColorPalette =
   | 'rose'
 
 
-export const COLOR_PALETTES: ColorPalette[] = [
+export const colorPalettes: ColorPalette[] = [
   'slate',
   'grey',
   'zinc',
@@ -66,7 +66,7 @@ export type ThemePalette =
   | 'error'
 
 
-export const THEME_PALETTES: ThemePalette[] = [
+export const themePalettes: ThemePalette[] = [
   'default',
   'primary',
   'secondary',
@@ -90,10 +90,28 @@ export type Shade =
   | 900
 
 
-export const SHADES: Shade[] = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+export const shades: Shade[] = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 export type Palette = ColorPalette | ThemePalette
 
-export const PALETTES: Palette[] = [ ...COLOR_PALETTES, ...THEME_PALETTES ]
+export const palettes: Palette[] = [ ...colorPalettes, ...themePalettes ]
 
-export type Color = `${Palette}-${Shade}`
+export type MiscColor =
+  | 'text-primary'
+  | 'text-secondary'
+  | 'text-disabled'
+  | 'ui-background'
+  | 'ui-surface'
+  | 'ui-divider'
+
+export const miscColors = [
+  'text-primary',
+  'text-secondary',
+  'text-disabled',
+  'ui-background',
+  'ui-surface',
+  'ui-divider',
+]
+
+export type Color = `${Palette}-${Shade}` | MiscColor
+

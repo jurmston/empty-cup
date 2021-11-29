@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import { Button, ButtonProps, BUTTON_VARIANTS } from './Button'
-import { PALETTES } from '../styles'
+import { palettes } from '../styles'
 import FilterIcon from '../icons/FilterListRounded'
 import CancelIcon from '../icons/CancelRounded'
 
@@ -13,7 +13,7 @@ export default {
   argTypes: {
     palette: {
       control: 'select',
-      options: PALETTES,
+      options: palettes,
     },
     variant: {
       control: 'select',

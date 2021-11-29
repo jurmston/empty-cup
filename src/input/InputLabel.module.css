@@ -1,0 +1,9 @@
+.label {
+  color: var(--palette--text-secondary);
+  font-size: var(--typography--h6-font-size);
+  font-weight: var(--typography--h6-font-weight);
+  line-height: var(--typography--h6-line-height);
+  letter-spacing: var(--typography--h6-letter-spacing);
+  transition:
+    color var(--transition--duration) var(--transition--curve),
+}

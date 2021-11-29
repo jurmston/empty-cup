@@ -3,7 +3,12 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import HelpIcon from '../icons/HelpRounded'
 import { InputAddOn } from './InputAddOn'
-import { Input } from './Input'
+import { InputAdornment } from './InputAdornment'
+import {
+  Input,
+  INPUT_VARIANTS,
+  LABEL_ORIENTATIONS,
+} from './Input'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,7 +16,8 @@ export default {
   component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    variant: { control: 'select', options: INPUT_VARIANTS },
+    orientation: { control: 'select', options: LABEL_ORIENTATIONS },
   },
 } as ComponentMeta<typeof Input>
 
@@ -25,6 +31,6 @@ const Template: ComponentStory<typeof Input> = (args) => (
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  startAdornment: <HelpIcon />,
+  startAdornment: <InputAdornment position="start"><HelpIcon /></InputAdornment>,
   endAddOn: <InputAddOn component="button" onClick={() => alert('hi')}>Click</InputAddOn>,
 }
