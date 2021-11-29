@@ -113,5 +113,13 @@ export const miscColors = [
   'ui-divider',
 ]
 
-export type Color = `${Palette}-${Shade}` | MiscColor
+export type Color = Palette | `${Palette}-${Shade}` | MiscColor
 
+
+export function getColors() {
+  return [
+    ...palettes,
+    ...miscColors,
+    ...palettes.flatMap(p => shades.map(s => `${p}-${s}`)),
+  ]
+}

@@ -1,14 +1,15 @@
 import * as React from 'react'
-import { classicNameResolver } from 'typescript'
 import styles from './CircleLoader.module.css'
 import clsx from 'clsx'
+import { Color } from '../styles'
 
 
 interface CircleLoaderProps {
   size?: number
   value?: number
   variant?: 'determinate' | 'indeterminate'
-  color?: string
+  color?: Color
+  bgcolor?: Color
 }
 
 const SIZE = 44
@@ -21,6 +22,7 @@ export function CircleLoader({
   value = 0,
   variant = 'indeterminate',
   color = 'primary',
+  bgcolor = 'default-200',
 }: CircleLoaderProps) {
 
   const circleStyle: Partial<React.CSSProperties> = {}
@@ -35,7 +37,7 @@ export function CircleLoader({
     rootStyle.transform = 'rotate(-90deg)';
   }
 
-  circleStyle.stroke = `var(--colors-${color})`
+  circleStyle.stroke = `var(--palette--${color})`
 
   return (
     <span
@@ -51,12 +53,14 @@ export function CircleLoader({
         viewBox={VIEW_BOX}
       >
         <circle
-          className={styles.backgroundCircle}
           cx={SIZE}
           cy={SIZE}
           r={(SIZE - THICKNESS) / 2}
           fill="none"
           strokeWidth={THICKNESS}
+          style={{
+            stroke: `var(--palette--${bgcolor})`,
+          }}
         />
 
         <circle

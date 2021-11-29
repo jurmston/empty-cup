@@ -6,21 +6,17 @@
   display: block;
 }
 
-.backgroundCircle {
-  stroke: var(--colors-grey-200);
-}
-
 .progressCircle {
   stroke-linecap: round;
 }
 
 .indeterminate {
-  transition: transform var(--transition-duration) var(--transition-curve);
+  transition: transform var(--transition--duration) var(--transition--curve);
   animation: circularRotateKeyframe 1.4s linear infinite;
 }
 
 .determinate .progressCircle {
-  transition: stroke-dashoffset var(--transition-duration) var(--transition-curve);
+  transition: stroke-dashoffset var(--transition--duration) var(--transition--curve);
 }
 
 .indeterminate .progressCircle {
