@@ -380,7 +380,7 @@
 
   /** Typography **/
   --typography--font-weight-light: 300;
-  --typography--font-weight-regular: 400;
+  --typography--font-weight-normal: 400;
   --typography--font-weight-medium: 500;
   --typography--font-weight-bold: 700;
   --typography--font-size: 16px;
@@ -388,7 +388,7 @@
   --typography--font-family-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --typography--base-font-size: 1rem;
-  --typography--base-font-weight: var(--typography--font-weight-regular);
+  --typography--base-font-weight: var(--typography--font-weight-normal);
   --typography--base-line-height: 1.43;
   --typography--base-letter-spacing: 0.01071em;
 
@@ -418,7 +418,7 @@
   --typography--h6-letter-spacing: 0.00714em;
 
   --typography--caption-font-size: 0.75rem;
-  --typography--caption-font-weight: var(--typography--font-weight-regular);
+  --typography--caption-font-weight: var(--typography--font-weight-normal);
   --typography--caption-line-height: 1.66;
   --typography--caption-letter-spacing: 0.0333em;
 

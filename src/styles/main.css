@@ -186,7 +186,7 @@ th {
 }
 
 td {
-  font-weight: var(--typography--font-weight-regular);
+  font-weight: var(--typography--font-weight-normal);
 }
 
 tbody td {

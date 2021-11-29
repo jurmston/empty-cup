@@ -22,12 +22,12 @@ export const Primary = () => {
   return (
     <Stack gap={1} direction="row">
       <Chip>Default</Chip>
-      <Chip color="primary">Primary</Chip>
-      <Chip color="secondary">Secondary</Chip>
-      <Chip color="success">Success</Chip>
-      <Chip color="info">Info</Chip>
-      <Chip color="warning">Warning</Chip>
-      <Chip color="error">Error</Chip>
+      <Chip palette="primary">Primary</Chip>
+      <Chip palette="secondary">Secondary</Chip>
+      <Chip palette="success">Success</Chip>
+      <Chip palette="info">Info</Chip>
+      <Chip palette="warning">Warning</Chip>
+      <Chip palette="error">Error</Chip>
     </Stack>
   )
 }
@@ -36,12 +36,12 @@ export const Clickable = () => {
   return (
     <Stack gap={1} direction="row">
       <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')}>Default</Chip>
-      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} color="primary">Primary</Chip>
-      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} color="secondary">Secondary</Chip>
-      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} color="success">Success</Chip>
-      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} color="info">Info</Chip>
-      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} color="warning">Warning</Chip>
-      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} color="error">Error</Chip>
+      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} palette="primary">Primary</Chip>
+      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} palette="secondary">Secondary</Chip>
+      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} palette="success">Success</Chip>
+      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} palette="info">Info</Chip>
+      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} palette="warning">Warning</Chip>
+      <Chip endIcon={<CloseIcon />} onClick={() => alert('Clicked')} palette="error">Error</Chip>
     </Stack>
   )
 }

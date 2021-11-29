@@ -2,30 +2,29 @@ import * as React from 'react'
 import clsx from 'clsx'
 import styles from './Chip.module.css'
 import { OverrideProps } from '../OverridableComponent'
-import { ThemeColor } from '../types'
+import { Palette } from '../styles'
 
 
-interface ChipTypeMap<P = {}, D extends React.ElementType = 'div'> {
-  props: P & {
-    /**
-     * The content of the component.
-     */
-     startIcon?: React.ReactNode
-     endIcon?: React.ReactNode
-     color: ThemeColor
-  }
-  defaultComponent: D
+export interface ChipOptions {
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
+  palette?: Palette
 }
 
 
-type ChipProps<
+export interface ChipTypeMap<P = {}, D extends React.ElementType = 'div'> {
+  props: P & ChipOptions
+  defaultComponent: D
+}
+
+export type ChipProps<
   D extends React.ElementType = ChipTypeMap['defaultComponent'],
   P = {}
 > = OverrideProps<ChipTypeMap<P, D>, D>
 
 
 export function Chip({
-  color = 'default',
+  palette = 'default',
   startIcon,
   endIcon,
   children,
@@ -36,9 +35,17 @@ export function Chip({
 
   const ChipComponent = isClickable ? 'button' : 'div'
 
+  const computedStyle = {
+    '--chip--color': `var(--palette--${palette}-700)`,
+    '--chip--bgcolor': `var(--palette--${palette}-200)`,
+    '--chip--active-bgcolor': `var(--palette--${palette}-400)`,
+    '--chip--hover-bgcolor': `var(--palette--${palette}-300)`,
+  } as any
+
   return (
     <ChipComponent
-      className={clsx(styles.chip, styles[color], {
+      style={computedStyle}
+      className={clsx(styles.chip, {
         [styles.hasStartIcon]: Boolean(startIcon),
         [styles.hasEndIcon]: Boolean(endIcon),
         [styles.isClickable]: isClickable,

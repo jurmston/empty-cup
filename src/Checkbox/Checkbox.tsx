@@ -10,7 +10,7 @@ interface CheckboxProps extends React.HTMLProps<HTMLInputElement> {
 }
 
 
-export function Checkbox({ id, label, palette = 'default', ...rest }: CheckboxProps) {
+export function Checkbox({ id, label, palette = 'primary', ...rest }: CheckboxProps) {
   return (
     <span className={styles.checkbox}>
       <input
@@ -21,7 +21,9 @@ export function Checkbox({ id, label, palette = 'default', ...rest }: CheckboxPr
       />
 
       <span
-        style={{ backgroundColor: `var(--palette--${palette})`}}
+        style={{
+          '--checkbox--checked-color': `var(--palette--${palette})`
+        } as any}
         className={styles.checkboxIcon}
       />
 
