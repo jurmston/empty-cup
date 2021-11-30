@@ -40,7 +40,7 @@ const Template: Story<ButtonProps> = (args) => (
 // Reuse that template for creating different stories
 export const Primary = Template.bind({})
 Primary.args = {
-  children: 'Button',
+  children: <FilterIcon />,
   palette: 'primary',
   variant: 'text',
   startIcon: false,

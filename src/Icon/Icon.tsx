@@ -9,7 +9,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   size?: number
 }
 
-export function Icon({ color = 'default', size = 1, children, ...rest }: IconProps) {
+export function Icon({ color, size = 1, children, ...rest }: IconProps) {
 
   return (
     <svg
@@ -20,7 +20,7 @@ export function Icon({ color = 'default', size = 1, children, ...rest }: IconPro
         fontSize: `calc(1rem * ${size})`,
         height: `calc(1rem * ${size})`,
         width: `calc(1rem * ${size})`,
-        color: `var(--palette--${color})`,
+        color: color ? `var(--palette--${color})` : 'inherit',
         ...rest.style
       }}
     >

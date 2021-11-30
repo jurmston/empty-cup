@@ -44,6 +44,8 @@ function moveFocus(
   let wrappedOnce = false
   let nextFocus = getNextItem(list, currentFocus, childKey)
 
+  console.log(currentFocus, nextFocus)
+
   while (nextFocus) {
     // Prevent infinite loop.
     if (nextFocus === list[childKey]) {

@@ -1,15 +1,10 @@
 .avatar {
-  border-radius: 999px;
-  height: 48px;
-  width: 48px;
-  background-color: var(--palette--default-500);
-  color: var(--palette--white);
-  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  font-weight: var(--typography--font-weight-medium);
 }
 
 .image {
@@ -26,8 +21,4 @@
 
 .isClickable {
   cursor: pointer;
-}
-
-.icon {
-  font-size: 24px;
 }

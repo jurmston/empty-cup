@@ -29,9 +29,7 @@ export const Primary = () => {
         component="button"
         onClick={() => {}}
         name="Bob Smith"
-        sx={{
-          bg: 'orange',
-        }}
+        style={{ backgroundColor: 'orange' }}
       />
 
       <Avatar

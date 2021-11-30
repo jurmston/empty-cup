@@ -27,6 +27,9 @@ interface AvatarTypeMap<P = {}, D extends React.ElementType = 'span'> {
     size?: number
     imgProps?: React.HTMLProps<HTMLImageElement>
     sx?: SxProps
+    size?: number
+    rounded?: 'full' | number
+    rawColor?: string
   }
   defaultComponent: D
 }
@@ -64,7 +67,9 @@ export function Avatar({
   children,
   icon,
   imgProps,
-  sx,
+  size = 4,
+  rawColor,
+  rounded = 'full',
   ...rest
 }: AvatarProps) {
 
@@ -72,7 +77,18 @@ export function Avatar({
   const hasImage = src || srcSet
   const hasImageAndNotFailing = hasImage && imageStatus !== 'error'
 
-  const sxStyles = useSx(sx)
+  const computedStyle = {
+    backgroundColor: rawColor ?? `var(--palette--default-500)`,
+    color: 'var(--palette--white',
+    width: `calc(var(--unit) * ${size})`,
+    height: `calc(var(--unit) * ${size})`,
+    fontSize: `calc(1rem * ${size * 0.25})`,
+    borderRadius: rounded === 'full'
+      ? '50%'
+      : `calc(var(--unit) * ${rounded}) * 0.5`,
+  }
+
+  const iconSize = size * 0.3
 
   const computedChildren = hasImageAndNotFailing ? (
     <img
@@ -86,11 +102,12 @@ export function Avatar({
   ) : icon ? (
     React.cloneElement(icon, {
       className: clsx(AvatarClasses.icon, styles.icon, icon.props?.className),
+      size: iconSize,
     })
   ) : name ? (
     getInitials(name)
   ) : (
-    <PersonIcon className={clsx(AvatarClasses.icon, styles.icon)} />
+    <PersonIcon className={clsx(AvatarClasses.icon, styles.icon)} size={iconSize} />
   )
 
   return (
@@ -102,7 +119,7 @@ export function Avatar({
         rest?.className,
         Boolean(rest?.onClick) && styles.isClickable,
       )}
-      style={sxStyles}
+      style={{ ...computedStyle, ...rest.style }}
     >
       {computedChildren}
     </AvatarComponent>

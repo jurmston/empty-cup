@@ -97,7 +97,7 @@ export const Primary = () => {
             color,
             bg,
             borderColor,
-            borderRadius: 1,
+            rounded: 6,
             shadow: 'xs',
             grid: 4,
             gap: 1,
@@ -118,16 +118,16 @@ export const Primary = () => {
             },
           }}
         >
-          <Box sx={{ bg: 'red', borderRadius: 0.5 }}>
+          <Box sx={{ bg: 'red', rounded: 1 }}>
             <p>Hello</p>
           </Box>
-          <Box sx={{ bg: 'orange', span: 2, borderRadius: 0.5 }} />
-          <Box sx={{ bg: 'white', borderRadius: 0.5, p: 1 }}>
+          <Box sx={{ bg: 'orange', span: 2, rounded: 'full' }} />
+          <Box sx={{ bg: 'white', rounded: 0, p: 1 }}>
             <Box sx={{ w: 1, h: 56, bg: 'lime-200' }} />
           </Box>
-          <Box sx={{ bg: 'green', borderRadius: 0.5 }} />
-          <Box sx={{ bg: 'blue', h: 65, borderRadius: 0.5 }} />
-          <Box sx={{ bg: 'purple', borderRadius: 0.5 }} />
+          <Box sx={{ bg: 'green', rounded: 1 }} />
+          <Box sx={{ bg: 'blue', h: 65, rounded: 1 }} />
+          <Box sx={{ bg: 'purple', rounded: 1 }} />
         </Box>
       </div>
     </>

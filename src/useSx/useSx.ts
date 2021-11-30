@@ -12,6 +12,7 @@ const BREAKPOINTS = {
 
 const BREAKPOINT_PROPS = new Set(['xs', 'sm', 'md', 'lg', 'xl'])
 
+
 export type SxColorProp =
   | 'color'
   | 'bg'
@@ -47,7 +48,7 @@ export type SxUnitProp =
 
 
 const UNIT_PROPS = new Set([
-  'borderRadius', 'gap', 'rowGap', 'columnGap'
+  'gap', 'rowGap', 'columnGap'
 ])
 
 
@@ -245,7 +246,7 @@ export function composeSxStyles(sx: SxProps | React.CSSProperties = {}): Partial
       }
 
       case prop === 'border': {
-        result.borderWidth = `calc(var(--unit) * ${sx.border})`
+        result.borderWidth = sx.border
         result.borderStyle = 'solid'
         break
       }
@@ -289,6 +290,13 @@ export function composeSxStyles(sx: SxProps | React.CSSProperties = {}): Partial
         result.gridColumn = value === 'full'
           ? '1 / -1'
           : `span ${value} / span ${value}`
+        break
+      }
+
+      case prop === 'rounded': {
+        result.borderRadius = value === 'full'
+          ? '9999px'
+          : `calc(var(--unit) * ${value} * 0.5)`
         break
       }
 

@@ -31,12 +31,13 @@
   color: var(--palette--text-primary)l
 }
 
-.menuListItem:active:not(.isDisabled) {
-  background-color: var(--palette--grey-300);
+.menuListItem:focus:not(.isDisabled) {
+  background-color: var(--palette--grey-100);
+  box-shadow: var(--highlight--primary);
 }
 
-.menuListItem:focus:not(.isDisabled) {
-  box-shadow: var(--highlight-primary);
+.menuListItem:active:not(.isDisabled) {
+  background-color: var(--palette--grey-300);
 }
 
 .isDisabled {

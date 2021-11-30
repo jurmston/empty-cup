@@ -1,0 +1,7 @@
+.box {
+  --box--hover-bg: unset;
+}
+
+.box:hover {
+  background-color: unset;
+}

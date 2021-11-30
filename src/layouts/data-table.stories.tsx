@@ -3,12 +3,14 @@ import React from 'react'
 import Container from '../Container'
 import Stack from '../Stack'
 import Chip from '../Chip'
+import Avatar from '../Avatar'
+import Text from '../Text'
 import Input, { InputAddOn } from '../Input'
 
 import FilterIcon from '../icons/FilterListRounded'
 import DownIcon from '../icons/KeyboardArrowDownRounded'
 import Button from '../Button'
-import Text from '../Text'
+import Box from '../Box'
 
 export default {
   title: 'Layouts/DataTablePage',
@@ -18,22 +20,47 @@ export const Primary = () => {
 
   return (
     <>
-      <Stack
-        direction="row"
-        alignItems="center"
-        style={{
-          paddingLeft: 24,
-          paddingRight: 24,
-          width: '100%',
-          height: 56,
-          maxHeight: 56,
-          minHeight: 56,
-          borderBottom: '1px solid var(--colors-grey-300)',
-          backgroundColor: 'var(--colors-grey-100)',
+      <Box
+        sx={{
+          stack: 'row flex-start center',
+          px: 3,
+          h: 56,
+          hMin: 56,
+          mMax: 56,
+          bg: 'default-100',
+          borderColor: 'default-300',
+          borderBottomWidth: 1,
+          borderBottomStyle: 'solid',
+          w: 1,
         }}
       >
         <h3>Hello!</h3>
-      </Stack>
+        <div style={{ flex: 1 }} />
+
+        <Box
+          component="button"
+          sx={{
+            stack: 'row center center',
+            gap: 1,
+            rounded: 'full',
+            h: 36,
+            shadow: 'xs',
+            border: 1,
+            bg: 'white',
+            borderColor: 'default-300',
+          }}
+        >
+          <Avatar
+            name="Bob Smith"
+            style={{ backgroundColor: 'orange' }}
+            size={3}
+          />
+
+          <Text>Bob Smith</Text>
+
+          <DownIcon />
+        </Box>
+      </Box>
 
       <Container style={{ marginTop: 16 }}>
         <Stack
